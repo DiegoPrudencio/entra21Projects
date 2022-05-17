@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Somar</title>
+    </head>
+    <body>
+        
+        <form action="">
+            <Label>Coloque o primeiro valor aqui:</Label><br>
+            <input type="number" name="nmNum1" id="idNum1">
+                <br><br>
+            <Label>Coloque o segundo valor aqui:</Label><br>
+            <input type="number" name="nmNum2" id="idNum2">
+                <br><br>
+            <Label>O resultado é: </body><br>
+            <input type="text" name="nmResultado" id="idResultado" readonly>
+                <br><br>
+            <input type="button" name="nmButton" id="Button" value="Somar" onclick="valoresTela()">
+
+        </form>
+
+        <script>
+
+            var num1
+            var num2 
+            var resultado
+
+            function valoresTela(){
+            
+                num1 = Number(document.getElementById("idNum1").value)
+                num2 = Number(document.getElementById("idNum2").value)
+                resultado = num1 + num2
+                document.getElementById("idResultado").value = resultado
+
+            }
+        </script>
+        
+    </body>
+</html>

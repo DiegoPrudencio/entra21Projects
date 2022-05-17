@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Triângulo</title>
+    </head>
+    <body>
+        <main>
+
+            <form action="">
+                <fieldset>
+                    <legend>Vamos formar um Triângulo</legend>
+                            <br>
+                        <label for="idReta1">Digite o valor da primeira reta:</label>
+                            <br><br>
+                        <input type="number" name="nmReta1" id="idReta1" required step="0.1">
+                            <br><br>
+                        <label for="idReta2">Digite o valor da segunda reta:</label>
+                            <br><br>
+                        <input type="number" name="nmReta2" id="idReta2" required step="0.1">
+                            <br><br>
+                        <label for="idReta3">Digite o valor da terceira reta:</label>
+                            <br><br>
+                        <input type="number" name="nmReta3" id="idReta3" required step="0.1">
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idRespostaTriangulo"></output> 
+    
+                </fieldset>
+            </form>
+    
+            <script>
+    
+    
+                function conferir() {
+    
+                    var ladoA = Number(document.getElementById("idReta1").value)
+                    var ladoB = Number(document.getElementById("idReta2").value)
+                    var ladoC = Number(document.getElementById("idReta3").value)
+                    var mensagem
+
+                    var isTriangulo = true
+
+                        if ((ladoA + ladoB) < ladoC) {
+                            isTriangulo = false
+                        } 
+
+                        if ((ladoB + ladoC) < ladoA) {
+                            isTriangulo = false
+                        } 
+
+                        if ((ladoA + ladoC) < ladoB) {
+                            isTriangulo = false
+                        } 
+
+                        if (isTriangulo) {
+                            document.getElementById("idRespostaTriangulo").value = "É Possível formar um triângulo"
+                        } else {
+                            document.getElementById("idRespostaTriangulo").value = "Não é Possível formar um triângulo"
+                        }
+
+                    }
+    
+            </script>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Votação Eleitoral</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Votação Eleitoral</legend>
+            <form action="" method="get">
+                <br>
+                <div>
+                    <label for="idNumeroCandidato">Número Eleitoral do Canditado:</label>
+                    <input list="idListCandidato" id="idNumeroCandidato" placeholder="Digite apenas números">
+                    <datalist id="idListCandidato">
+                        <option value="13">João</option>
+                        <option value="103">Joaquim</option>
+                        <option value="1003">Maria</option>
+                        <option value="1013">Giovana</option>
+                        <option value="1133">Katiucha</option>
+                </div>
+                <br><br>
+                <div>
+                    <disable>
+                    <a href="pages/candidato.html"><input type="button" name="nmVerificar" id="idVerificar" value="Verificar"> </a>
+                    </disable>
+                    <input type="button" name="nmVerificar" id="idVerificar" value="Verificar" onclick="pegarNome()">
+                    <a href="images/fim.jpeg"><input type="button" name="nmVotoBranco" id="idVotoBranco" value="VOTAR EM BRANCO"> </a>                    
+                </div>
+
+            </form>
+
+        </fieldset>
+
+        <script>
+
+            var numeroCandidato
+
+               function pegarNome() {
+                    numeroCandidato = document.getElementById("idNumeroCandidato").value
+                    console.log("Número do Candidato: " + numeroCandidato);
+
+                  
+               }
+
+
+        </script>
+    </body>
+</html>

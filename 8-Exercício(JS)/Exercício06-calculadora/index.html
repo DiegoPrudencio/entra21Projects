@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Calculadora.</legend>
+                            <br>
+                        <label for="idNum1">Digite um número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum1" id="idNum1" required>
+                            <br><br>
+                        <label for="idNum2">Digite outro número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum2" id="idNum2" required>
+                            <br><br>
+                        <label for="idOperacao">Digite o símbulo da operação (soma, subtração, multiplicação ou divisão):</label>
+                            <br><br>
+                        <input type="text" name="nmOperacao" id="idOperacao" required placeholder="| + | - | * | / |">
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+
+                function conferir() {
+
+                    var num1 = Number(document.getElementById("idNum1").value)
+                    var num2 = Number(document.getElementById("idNum2").value)
+                    var operacao = document.getElementById("idOperacao").value
+                    var resultado
+
+                    if (operacao == "+") {
+                        resultado = (num1 + num2)
+                        console.log("Operação selecionada: soma");
+                    } else if (operacao == "-") {
+                        resultado = (num1 - num2)
+                        console.log("Operação selecionada: subtração");
+                    } else if (operacao == "*") {
+                        resultado = (num1 * num2)
+                        console.log("Operação selecionada: multiplicação");
+                    } else if (operacao == "/") {
+                        resultado = (num1 / num2)
+                        console.log("Operação selecionada: divisão");
+                    }else {
+                        resultado = "Operação inválida"
+                        console.log("Operação inválida");
+                    }
+                    document.getElementById("idResultado").value = "O resultado é igual a: " + resultado
+                }
+            </script>
+        </main>
+    </body>
+</html>

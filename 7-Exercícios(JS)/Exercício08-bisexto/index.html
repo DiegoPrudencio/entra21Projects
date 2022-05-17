@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bisexto</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Você sabe se um ano é bisexto ou nao? Vamos descobrir.</legend>
+                            <br>
+                        <label for="idAno">Digite o ano aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmAno" id="idAno" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idRespostaAno"></output> 
+    
+                </fieldset>
+            </form>
+    
+            <script>
+    
+    
+                function conferir() {
+    
+                    var ano = document.getElementById("idAno").value
+                    var criterio1
+                    var criterio2
+                    var criterio3
+                    var bisexto
+                    var mensagem
+                    
+                    criterio1 = ano % 4
+                    criterio2 = ano % 400
+                    criterio3 = ano % 100
+
+                    /*criterio1 == 0 || criterio2 == 0 && criterio3 != 0*/
+                    
+                    if ((criterio1 == 0 && criterio3 != 0) || criterio2 == 0) {
+                        mensagem = "O ano é bisexto."
+                    } else {
+                        mensagem = "Não, esse ano não é bisexto."
+                    }
+                    
+                    console.log(criterio1)
+                    console.log(criterio2)
+                    console.log(criterio3)
+                    
+                        document.getElementById("idRespostaAno").value = mensagem
+                }
+    
+            </script>
+        </main>
+    </body>
+</html>

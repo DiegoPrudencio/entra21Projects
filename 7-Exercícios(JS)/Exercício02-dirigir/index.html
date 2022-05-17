@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira de Motorista</title>
+</head>
+<body>
+    <main>
+        <h2>Será que você já pode dirigir? Vamos descobrir...</h2>
+                <br><br>
+            <label for="idIdadeDirigir">Qual a sua idade?</label>
+                <br><br>
+            <input type="number" name="nmIdadeDirigir" id="idIdadeDirigir" required>
+                <br><br>
+            <input type="button" name="nmButton" id="Button" value="Conferir" onclick="Calcular()">
+                <br><br>
+            <output id="idResultado"></output> 
+
+
+        <script>
+            function Calcular() {
+
+            var idade = Number(document.getElementById("idIdadeDirigir").value)
+            var resultado
+            var imagem1
+            var imagem2
+
+            if (idade >= 18 && idade <= 100) {
+                resultado = "Parabéns... Você já pode fazer sua carteira."
+            }
+            if (idade < 18 && idade > 0) {
+                resultado = "Você ainda é muito jovem!"
+            } 
+            if (idade > 100 || idade < 0) {
+                resultado = "Idade inválida."
+            }
+            
+
+            document.getElementById("idResultado").value = resultado
+
+            }
+
+        </script>
+    </main>
+</body>
+</html>

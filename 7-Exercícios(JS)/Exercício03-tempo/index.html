@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Média da previsão do tempo</legend>
+                        <br>
+                    <label for="idTemperatura1">Qual a temperatura de 3 dias atrás?</label>
+                        <br><br>
+                    <input type="number" name="nmTemperatura1" id="idTemperatura1" required>
+                    <output id="idOutTemperatura1"></output> 
+                        <br><br>
+                    <label for="idTemperatura2">Qual a temperatura de 2 dias atrás?</label>
+                        <br><br>
+                    <input type="number" name="nmTemperatura2" id="idTemperatura2" required>
+                    <output id="idOutTemperatura2"></output> 
+                        <br><br>
+                    <label for="idTemperatura3">Qual a temperatura de 1 dias atrás?</label>
+                        <br><br>
+                    <input type="number" name="nmTemperatura3" id="idTemperatura3" required>
+                    <output id="idOutTemperatura3"></output>
+                        <br><br>
+                    <label for="idTemperatura4">Qual a temperatura de hoje?</label>
+                        <br><br>
+                    <input type="number" name="nmTemperatura4" id="idTemperatura4" required>
+                    <output id="idOutTemperatura4"></output>
+                        <br><br>
+                    <input type="button" name="nmButton" id="Button" value="Conferir" onclick="Calcular()">
+                            <br><br>
+
+                            <output id="idTemperaturaMedia"></output> 
+
+            </fieldset>
+        </form>
+
+        <script>
+
+            function Calcular () {
+
+                var temperatura1 = Number(document.getElementById("idTemperatura1").value)
+                var temperatura2 = Number(document.getElementById("idTemperatura2").value)
+                var temperatura3 = Number(document.getElementById("idTemperatura3").value)
+                var temperatura4 = Number(document.getElementById("idTemperatura4").value)
+                var temperaturaMedia
+                var resultado
+
+                    document.getElementById("idOutTemperatura1").value = "A temperatura de 3 dias atrás é " + temperatura1 + " °C."
+                    document.getElementById("idOutTemperatura2").value = "A temperatura de 2 dias atrás é " + temperatura2 + " °C."
+                    document.getElementById("idOutTemperatura3").value = "A temperatura de 1 dias atrás é " + temperatura3 + " °C."
+                    document.getElementById("idOutTemperatura4").value = "A temperatura de hoje é " + temperatura1 + " °C."
+            
+                temperaturaMedia = ((temperatura1 + temperatura2 + temperatura3)/3).toFixed(1)
+
+                    if (temperatura4 > temperaturaMedia)
+                        resultado = "A temperatura de hoje está maior que a média (" + temperaturaMedia + 
+                        " °C) de temperatura dos três últimos dias."
+                        else {
+                            resultado = "A temperatura de hoje está menor que a média (" + temperaturaMedia + 
+                            " °C) de temperatura dos três últimos dias."
+                        }
+                    
+                        document.getElementById("idTemperaturaMedia").value = resultado
+                }
+
+        </script>
+    </main>
+</body>
+</html>

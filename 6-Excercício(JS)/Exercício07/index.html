@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Cliente</title>
+</head>
+<body>
+    <fieldset>   
+    <form action="">
+            <h2>Calculadora de mercadoria</h2>
+
+            <label for="idPrecoCompra">Qual o preço de compra?</label>
+            <input type="number" name="nmPrecoCompra" id="idPrecoCompra" step="0.1">
+                <br><br>
+            <label for="idPrecoCompra">Custo fixo:</label>
+            <input type="text" name="nmCustoFixo" id="idCustoFixo" value="12" readonly>
+                <br><br>
+            <output id="idValorPrecoCusto">Valor de compra + custos fixos:</output> 
+                    <br><br>
+            <output id="idValorLiquido">Valor Líquido do Produto:</output> 
+                <br><br>
+            <output id="idPrecoVenda">Preço de venda:</output> 
+                <br><br>
+            <input type="button" name="nmBtCalcular" id="idBtCalcular" value="Calcular" onclick="calcularPreco()">
+        </form>
+    </fieldset>
+
+         
+        <script>
+            function calcularPreco() {
+
+                var custoFixo
+                var precoCompra
+                var resultadoCompraEFixo
+
+                var valorPrecoCusto
+
+                var PrecoCusto
+                var valorLiquido
+                var precoVenda
+
+                precoCompra = Number(document.getElementById("idPrecoCompra").value)
+                custoFixo = Number(document.getElementById("idCustoFixo").value)
+                resultadoCompraEFixo = precoCompra + custoFixo
+                document.getElementById("idValorPrecoCusto").value = "Valor de compra + custos fixos: " + resultadoCompraEFixo + " reais."
+                
+                valorLiquido = resultadoCompraEFixo * 0.35
+                document.getElementById("idValorLiquido").value = "Valor Líquido do Produto: " + valorLiquido + " reais."
+
+                precoVenda = valorLiquido + resultadoCompraEFixo
+                document.getElementById("idPrecoVenda").value = "Preço de venda: " + precoVenda + " reais."
+
+            }
+
+        </script>
+</body>
+</html>

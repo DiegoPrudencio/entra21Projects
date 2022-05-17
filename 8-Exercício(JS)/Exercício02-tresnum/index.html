@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Vamos conferir qual número é maior.</legend>
+                            <br>
+                        <label for="idNum1">Digite um número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum1" id="idNum1" required>
+                            <br><br>
+                        <label for="idNum2">Digite outro número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum2" id="idNum2" required>
+                            <br><br>
+                        <label for="idNum3">Digite mais um número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum3" id="idNum3" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+
+                /*var maiorNumero = -99999999999999
+                contaNumero = 0
+
+                function conferir () {
+                    let out = document.getElementById("idResultado")
+                    let num = Number(document.getElementById("idNum1").value)
+                    document.getElementById("idNum1").value = ""
+
+                    if (num > maiorNumero) {
+                        maiorNumero = num
+                    }
+                    out.value =  "O maior número é: " + maiorNumero
+
+                    if (contaNumero == 3) {
+                        document.getElementById("idNum1").disabled = true
+                    }
+
+                }*/
+
+                
+
+                function conferir() {
+
+                    var num1 = Number(document.getElementById("idNum1").value)
+                    var num2 = Number(document.getElementById("idNum2").value)
+                    var num3 = Number(document.getElementById("idNum3").value)
+                    var resultado
+
+                    if (num1 > num2 && num1 > num3) {
+                        resultado = "O primeiro número é o maior de todos: " + num1
+                    } else {
+                        if (num2 > num1 && num2 > num3) {
+                            resultado = "O segundo número é maior de todos: " + num2
+                        } else {
+                            resultado = "O terceiro número é maior de todos: " + num3
+                        }
+                        
+                    }
+
+                    document.getElementById("idResultado").value = resultado
+
+                }
+
+            </script>
+        </main>
+    </body>
+</html>

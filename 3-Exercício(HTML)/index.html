@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORM - STAINED COMPANY</title>
+    </head>
+    <body>
+        <main>
+            <section>
+                <br>
+                <h2>Formulário de contato - STAINED COMPANY</h2>
+            </section>
+                    <form action="" method="get">
+                        <section>
+                            <input type="text" id="idNome" name="nmNome" autofocus required placeholder="Nome completo:">
+                            <br><br>
+                            <input type="email" id="idEmail" name="nmEmail" autofocus required placeholder="E-mail:">
+                            <br><br>
+                            <input type="text" id="idEmpresa" name="nmEmpresa" autofocus placeholder="Empresa:">
+                            <br><br>
+                        </section>
+                        <section>
+                            <p>Motivo do contato:</p><br>
+                            <input type="checkbox" name="nmComercial" id="idComercial" value="Comercial">
+                            <label for="idComercial">Comercial</label>
+                            <br><br>
+                            <input type="checkbox" name="nmReclamacao" id="idReclamacao" value="Reclamacao">
+                            <label for="idReclamacao">Reclamação</label>
+                            <br><br>
+                            <input type="checkbox" name="Sugestao" id="idSugestao" value="Sugestao">
+                            <label for="idSugestao">Sugestão</label>
+                            <br><br>
+                            <input type="checkbox" name="nmCancelamento" id="idCancelamento" value="Cancelamento">
+                            <label for="idCancelamento">Cancelamento de assinatura</label>
+                            <br><br>
+                            <input type="checkbox" name="nmDuvida" id="idDuvida" value="Duvida">
+                            <label for="idDuvida">Dúvida</label>
+                            <br><br>
+                            <input type="checkbox" name="nmOutros" id="idOutros" value="Outros">
+                            <label for="idOutros">Outros</label>
+                            <input type="text" id="idQual" name="nmQual" placeholder="Qual?">
+                            <br><br>
+                        </section>
+                        <section>
+                            <textarea name="nmComentario" id="idComentario" cols="30" rows="10" maxlength="1000" autofocus placeholder="Escreva seu comentário aqui"></textarea>
+                            <br><br>
+                        </section>
+                        <section>
+                            <input type="button" name="mnButton" id="idButton" value="Enviar" onclick="pegarNome()">
+                            <input type="reset" name="" id="idReset">
+                        </section>
+                    </form>
+                </section>
+
+            <script>
+                var nome
+                var email
+                var empresa
+                var comercial
+                var reclamacao
+                var sugestao
+                var cancelamento
+                var duvida
+                var outros
+
+                function pegarNome() {
+                    nome = document.getElementById("idNome").value
+                    email = document.getElementById("idEmail").value
+                    empresa = document.getElementById("idEmpresa").value
+                    
+                    console.log("Nome completo: " + nome)
+                    console.log("E-mail: " + email)
+                    console.log("Empresa: " + empresa)
+
+                    comercial = document.getElementById("idComercial").checked
+                    reclamacao = document.getElementById("idComercial").checked
+                    sugestao = document.getElementById("idSugestao").checked
+                    cancelamento = document.getElementById("idCancelamento").checked
+                    duvida = document.getElementById("idDuvida").checked
+                    outros = document.getElementById("idOutros").checked
+                    console.log("Comercial: " + comercial + "Reclamação: " + reclamacao + "Sugestão: " + sugestao + "Cancelamento: " + cancelamento + "Dúvidas: " + duvida + "Outros: " + outros)
+
+                
+                
+                }
+
+            </script>
+        </main>
+    </body>
+</html>

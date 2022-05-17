@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Vamos conferir onde esse números se encaixa em relação ao 20.</legend>
+                            <br>
+                        <label for="idNum">Digite um números aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum" id="idNum" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+                function conferir() {
+
+                    var num = Number(document.getElementById("idNum").value)
+                    var resultado
+
+                    if (num == 20) {
+                        resultado = "Esse número é igual a 20."
+                    } else if (num > 20) {
+                            resultado = "Esse número é maior que 20."
+                    } else {
+                            resultado = "Esse número é menor que 20."
+                    }
+                        
+                    
+
+                    document.getElementById("idResultado").value = resultado
+
+                }
+
+            </script>
+        </main>
+    </body>
+</html>

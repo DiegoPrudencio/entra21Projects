@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+        <header>
+            <h2>Login:</h2>
+        </header>
+        <br><br>
+        <main>
+            <form action="" method="get">
+                <section>
+                    <label for="idUsuario">Usuário:</label>
+                    <input type="text" id="idUsuario" name="nmUsuario" autofocus autocomplete="on">
+                </section>
+                    <br>
+                <section>
+                    <label for="idSenha">Senha:</label>
+                    <input type="password" id="idSenha" name="nmSenha" autofocus autocomplete="off" maxlength="15" minlength="8" pattern=""> 
+
+                </section>
+                <br><br>
+                    <input type="button" name="nmButton" id="idButton" value="Login" onclick="pegarNome()">
+                    <a href="../Exercício05/pages/recuperarsenha.html"><input type="button" name="nmRecuperarSenha" id="idRecuperarSenha" value="Recuperar senha"></a>
+            </form>
+
+            <script>
+                var usuario
+                
+                function pegarNome() {
+                    usuario = document.getElementById("idUsuario").value
+                    console.log("Nome do usuário: " + usuario)
+                }
+
+            </script>
+        </main>
+    </body>
+</html>

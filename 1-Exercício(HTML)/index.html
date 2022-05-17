@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro do aluno - CEIA</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Cadastro do Aluno - CEIA</legend>
+            <form action="" method="get">
+                <section>
+                    <div>
+                        <br>
+                        <label for="idNome">Nome:</label>
+                        <input type="text" id="idNome" name="nmNome" autofocus required>
+                        <br>
+                        <label for="idSegundoNome">Segundo nome:</label>
+                        <input type="text" id="idSegundoNome" name="nmSegundoNome" autofocus>
+                        <br>
+                        <label for="idSobrenome">Sobrenome:</label>
+                        <input type="text" id="idSobrenome" name="nmSobrenome" autofocus required>
+                        <br><br>
+                    </div>
+                    <div>
+                        <label for="idDataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="idDataNascimento" name="nmDataNascimento" required max="2022-04-29">
+                    </div>
+                        <br>
+                    <div>
+                        <label for="idSexo">Sexo de nascimento:</label>
+                        <br><br>
+                        <input type="radio" id="idFem" name="nmGenero" value="F" checked>
+                        <label for="idFem">Feminino</label>
+                        <br>
+                        <input type="radio" name="nmGenero" id="idMasc" value="M">
+                        <label for="idMasc">Masculino</label>
+                        <br><br>
+                        <label for="idGenero">Com qual gênero você se identifica?</label>
+                        <input type="text" id="idGenero" name="nmGenero" autofocus>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="idEmail">E-mail:</label>
+                        <input type="email" id="idEmail" name="nmEmail" autofocus required>
+                        <br>
+                        <label for="idSerie">Série atual (nível de alfabetização):</label>
+                        <input type="text" id="idSerie" name="nmSerie" autofocus required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="idNomeMae">Nome completo da mãe:</label>
+                        <input type="text" id="idNomeMae" name="nmNomeMae" autofocus>
+                        <br>
+                        <label for="idNomePai">Nome completo do pai:</label>
+                        <input type="text" id="idNomePai" name="nmNomePai" autofocus>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="idEndereco">Endereço completo:</label>
+                        <br><br>
+                        <label for="idRua">Rua:</label>
+                        <input type="text" id="idRua" name="idRua" autofocus required>
+                        
+                        <label for="idNumero">nº:</label>
+                        <input type="text" id="idNumero" name="idNumero" autofocus required>
+                        <br>
+                        <label for="idCep">CEP:</label>
+                        <input type="tex" id="idCep" name="idCep" maxlength="8" autofocus required>
+                
+                        <label for="idBairro">Bairro:</label>
+                        <input type="text" id="idBairro" name="idBairro" autofocus required>
+                        <br>
+                        <label for="idCidade">Cidade:</label>
+                        <input type="text" id="idCidade" name="idCidade" autofocus required>
+                        
+                        <label for="idEstado">Estado:</label>
+                        <input type="text" id="idEstado" name="idEstado" autofocus required maxlength="2" size="2">
+                    </div>
+                    <br><br>
+                    <div>
+                        <input type="button" name="nmButton" id="idButton" value="Enviar" onclick="pegarNome()">
+                        <input type="reset" name="" id="idReset">
+                    </div>
+                </section>
+            </form>
+        </fieldset>
+
+        <script>
+
+            var nome
+            var segundoNome
+            var sobrenome
+            var data
+            var genero
+            var email
+            var serie
+            var mae
+            var pai
+            var rua
+            var numero
+            var cep
+            var bairro
+            var cidade
+            var estado
+            var fem
+            var masc
+
+
+            function pegarNome() {
+                nome = document.getElementById("idNome").value
+                sobrenome = document.getElementById("idSobrenome").value
+                segundoNome = document.getElementById("idSegundoNome").value
+
+
+                console.log("Nome: " + nome + " " + segundoNome + " " + sobrenome)
+
+                data = document.getElementById("idDataNascimento").value
+                console.log("Data de nascimento: " + data)
+
+                fem = document.getElementById("idFem").checked
+                masc = document.getElementById("idMasc").checked
+                console.log("Feminino: " + fem + " Masculino: " + masc)
+                
+                genero = document.getElementById("idGenero").value
+                console.log("Gênero: " + genero)
+            
+                email = document.getElementById("idEmail").value
+                console.log("E-mail: " + email)
+
+                serie = document.getElementById("idSerie").value
+                console.log("Série atual: " + serie)
+
+                mae = document.getElementById("idNomeMae").value
+                console.log("Nome da mãe: " + mae)
+
+                pai = document.getElementById("idNomePai").value
+                console.log("Nome do pai: " + pai)
+
+                rua = document.getElementById("idRua").value
+                numero = document.getElementById("idNumero").value
+                cep = document.getElementById("idCep").value
+                bairro = document.getElementById("idBairro").value
+                cidade = document.getElementById("idCidade").value
+                estado = document.getElementById("idEstado").value
+                console.log("Endereço completo: " + rua + ", " + numero + " - " + cep + ". " + bairro + ", " + cidade + "/" + estado)
+
+            }
+
+
+
+        </script>
+    </body>
+</html>

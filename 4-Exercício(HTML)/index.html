@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Satisfação</title>
+    </head>
+    <body>
+        <header>
+            <h2>Formulário de Pesquisa de Satisfação</h2>
+            <p>Por favor, responda as perguntas abaixo.</p>
+            <br><br>
+        </header>
+        <main>
+            <form action="" method="get">
+                <section>
+                        <label>1) Sua solicitação foi atendida?</label>
+                        <br><br>
+                        <input type="radio" id="idTotalmente" name="nmSolicitacao" value="Total">
+                        <label for="idTotalmente">Totalmente atendida</label>
+                        <br><br>
+                        <input type="radio" id="idParcialmente" name="nmSolicitacao" value="Parcial">
+                        <label for="idParcialmente">Parcialmente atendida</label>
+                        <br><br>
+                        <input type="radio" id="idNaoFoi" name="nmSolicitacao" value="NF">
+                        <label for="idNaoFoi">Não foi atendida</label>
+                </section>
+                    <br><br>
+                <section>
+                    <label>2) Qual nota você daria para o atendimento? </label>
+                    <br><br>
+                    <input type="radio" id="idExcelente" name="nmNota" value="Excelente">
+                    <label for="idExcelente">Excelente</label>
+                    <br><br>
+                    <input type="radio" id="idBom" name="nmNota" value="Bom">
+                    <label for="idBom">Bom</label>
+                    <br><br>
+                    <input type="radio" id="idAceitavel" name="nmNota" value="Aceitavel">
+                    <label for="idAceitavel">Aceitável</label>
+                    <br><br>
+                    <input type="radio" id="idRuim" name="nmNota" value="Ruim">
+                    <label for="idRuim">Ruim</label>
+                    <br><br>
+                    <input type="radio" id="idPessimo" name="nmNota" value="Pessimo">
+                    <label for="idPessimo">Péssimo</label>
+                </section>
+                    <br><br>
+                <section>
+                    <label>3) Como você classificaria o comportamento do atendente?  </label>
+                    <br><br>
+                    <input type="radio" id="idMuitoAtencioso" name="nmAtendimento" value="MuitoAtencioso">
+                    <label for="idEMuitoAtencioso">Muito Atencioso</label>
+                    <br><br>
+                    <input type="radio" id="idEducado" name="nmAtendimento" value="Educado">
+                    <label for="idEducado">Educado</label>
+                    <br><br>
+                    <input type="radio" id="idNeutro" name="nmAtendimento" value="Neutro">
+                    <label for="idNeutro">Neutro</label>
+                    <br><br>
+                    <input type="radio" id="idMalHumorado" name="nmAtendimento" value="MalHumorado">
+                    <label for="idMalHumorado">Mal-humorado</label>
+                    <br><br>
+                    <input type="radio" id="idIndelicado" name="nmAtendimento" value="Indelicado">
+                    <label for="idIndelicado">Indelicado</label>
+                </section>
+                    <br><br>
+                <section>
+                    <label for="idNotaProduto">4) De 0 a 10, qual nota você daria para o produto:</label>
+                    <br><br>
+                    <input type="range" name="nmNotaProduto" id="idNotaProduto" min="0" max="10" value="0">
+                </section>
+                    <br><br>
+                <section>
+                    <label for="idIdade">5) Qual a sua idade:</label>
+                    <input type="number" name="nmIdade" id="idIdade" min="1" max="120">
+                </section>
+                    <br><br>
+                <section>
+                    <label for="idGenero">6) Com qual gênero você se identifica?</label>
+                            <input type="text" id="idGenero" name="nmGenero" autofocus>
+                    <br><br>
+                </section>
+                    <br><br>
+                    <input type="submit" name="nmBtSubmit" id="idBtSubmit">
+                    <input type="reset" name="nmBtReset" id="idBtReset">
+            </form>
+        </main> 
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou ímpar</title>
+</head>
+<body>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Esse número é par ou ímpar? Vamos verificar?</legend>
+
+                    <label for="idNumero">Digite um número:</label>
+                        <br><br>
+                    <input type="text" name="nmNumero" id="idNumero" required>
+                        <br><br>
+                    <input type="button" name="nmButton" id="Button" value="Conferir" onclick="conferir()">
+                            <br><br>
+                        <output id="idResultadoNumero"></output> 
+
+            </fieldset>
+        </form>
+
+        <script>
+
+
+            function conferir() {
+
+                var numero = Number(document.getElementById("idNumero").value)
+                var resto
+                var mensagem
+
+                resto = numero % 2
+
+                if (resto == 0) {
+                    mensagem = "Esse número é par"
+                } else {
+                    mensagem = "Esse número é impar"
+                }
+                
+                    document.getElementById("idResultadoNumero").value = resultado
+            }
+
+        </script>
+    </main>
+</body>
+</html>

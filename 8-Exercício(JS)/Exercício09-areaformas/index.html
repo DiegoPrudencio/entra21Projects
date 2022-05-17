@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo das áreas</title>
+</head>
+<body>
+    <header>
+        <h2>Hora de calcular a área de cada forma geométrica:</h2>
+        <nav>
+            <ul>
+                <a href="#sectionCirculo" id="idSectionCirculo" class="link">Círculo</a>   |   
+                <a href="#sectionRetangulo" id="idSectionRetangulo" class="link" >Retângulo</a> </li>   |   
+                <a href="#sectionTrianguloRetangulo" id="idSectionTrianguloRetangulo" class="link">Triangulo Retângulo</a>   |   
+                <a href="#sectionTrianguloEquilatero" id="idSectionTrianguloEquilatero" class="link">Triângulo Equilátero</a>   |   
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form id="SectionCirculo" action="">
+                <fieldset>
+                    <Legend>Círculo</Legend>
+                                <br>
+                        <label for="idCirculo">Qual é o raio?</label>
+                            <input type="number" name="nmCirculo" id="idCirculo" step="0.1">
+                                <br>
+                        <h5>A área do círuclo é:</h5>
+                            <output id="idAreaCirculo">----</output> 
+                                <br><br>
+                            <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Calcular área" onclick="calcularCirculo()">
+                </fieldset>
+            </form>
+        </section>
+            <br><br>
+        <section>
+            <form id="sectionRetangulo" action="">
+                <fieldset>
+                    <Legend>Retângulo</Legend>
+                        <h4>Informe o tamanho dos lados:</h4>
+                        <label for="idRetanguloLado1">Lado 1:</label>
+                            <input type="number" name="nmRetanguloLado1" id="idRetanguloLado1" step="0.1">
+                        <label for="idRetanguloLado2">Lado 2:</label>
+                            <input type="number" name="nmRetanguloLado2" id="idRetanguloLado2" step="0.1">
+                        <h5>A área do retângulo é:</h5>
+                            <output id="idAreaRetangulo">----</output> 
+                                <br><br>
+                            <input type="button" name="nmBtCalcularRetangulo" id="idBtCalcularRetangulo" value="Calcular área" onclick="calcularRetangulo()">
+                </fieldset>
+            </form>
+        </section>
+            <br><br>
+        <section>
+            <form id="sectionTrianguloRetangulo" action="">
+                <fieldset>
+                    <Legend>Triângulo Retângulo</Legend>
+                        <h4>Informe a altura e a base:</h4>
+                        <label for="idTrianguloRetanguloAltura">Altura:</label>
+                            <input type="number" name="nmTrianguloRetanguloAltura" id="idTrianguloRetanguloAltura" step="0.1">
+                        <label for="idTrianguloRetanguloBase">Base:</label>
+                            <input type="number" name="nmTrianguloRetanguloBase" id="idTrianguloRetanguloBase" step="0.1">
+                        <h5>A área do triângulo retângulo é:</h5>
+                            <output id="idAreaTrianguloRetangulo">----</output> 
+                                <br><br>
+                            <input type="button" name="nmBtCalcularTrianguloRetangulo" id="idBtCalcularTrianguloRetangulo" value="Calcular área" onclick="calcularTrianguloRetangulo()">
+                </fieldset>
+            </form>
+        </section>
+            <br><br>
+        <section>
+            <form id="sectionTrianguloEquilatero" action="">
+                <fieldset>
+                    <Legend>Triângulo Equilátero:</Legend>
+                            <br>
+                        <label for="idTrianguloEquilatero">Qual é o lado?</label>
+                            <input type="number" name="nmTrianguloEquilatero" id="idTrianguloEquilatero" step="0.1">
+                                <br><br>
+                        <h5>A área do triângulo equilátero é:</h5>
+                            <output id="idAreaTrianguloEquilatero">----</output> 
+                                <br><br>
+                            <input type="button" name="nmBtCalcularTrianguloEquilatero" id="idBtCalcularTrianguloEquilatero" value="Calcular área" onclick="calcularTrianguloEquilatero()">
+                </fieldset>
+            </form>
+        </section>
+
+        <script>
+
+            function calcularCirculo () {
+                var circulo
+                var areaCirculo
+                var resultadoAreaCirculo
+
+                circulo = Number(document.getElementById("idCirculo").value)
+                resultadoAreaCirculo = 3.14*(circulo**2)
+
+                document.getElementById("idAreaCirculo").value = resultadoAreaCirculo
+
+            }
+
+            function calcularRetangulo() {
+                var retanguloLado1
+                var retanguloLado2
+                var resultadoAreaRetangulo
+
+                retanguloLado1 = Number(document.getElementById("idRetanguloLado1").value)
+                retanguloLado2 = Number(document.getElementById("idRetanguloLado2").value)
+                resultadoAreaRetangulo = retanguloLado1 * retanguloLado2
+
+                document.getElementById("idAreaRetangulo").value = resultadoAreaRetangulo
+            }
+
+            function calcularTrianguloRetangulo() {
+                var trianguloRetanguloAltura
+                var trianguloRetanguloBase
+                var resultadoAreaTrianguloRetangulo
+
+                trianguloRetanguloAltura = Number(document.getElementById("idTrianguloRetanguloAltura").value)
+                trianguloRetanguloBase = Number(document.getElementById("idTrianguloRetanguloBase").value)
+                resultadoAreaTrianguloRetangulo = (trianguloRetanguloAltura * trianguloRetanguloBase)/2
+
+                document.getElementById("idAreaTrianguloRetangulo").value = resultadoAreaTrianguloRetangulo
+            }
+
+            function calcularTrianguloEquilatero() {
+                var trianguloEquilatero
+                var resultadoAreaTrianguloEquilatero
+
+                trianguloEquilatero = Number(document.getElementById("idTrianguloEquilatero").value)
+                resultadoAreaTrianguloEquilatero = (trianguloEquilatero**2)*3**(1/2)/4
+
+                document.getElementById("idAreaTrianguloEquilatero").value = resultadoAreaTrianguloEquilatero
+            }
+
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alistamento</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Você sabe se já deve se alistar?.</legend>
+                            <br>
+                        <label for="idAnoNascimento">Digite seu ano de nascimento aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmAnoNascimento" id="idAnoNascimento" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idRespostaAnoNascimento"></output> 
+    
+                </fieldset>
+            </form>
+    
+            <script>
+    
+    
+                function conferir() {
+    
+                    var anoNascimento = Number(document.getElementById("idAnoNascimento").value)
+                    var alistamento
+                    var tempoPassado
+                    var tempoFaltante
+                    var mensagem
+
+                    alistamento = 2022 - anoNascimento
+                    tempoPassado = alistamento - 18
+
+                    if (alistamento >= 18) {
+                        mensagem = "Você deve se alistar e já se passaram " + tempoPassado + " anos da data."
+                    } else {
+                        mensagem = "Você ainda não pode se alistar e faltam " + (tempoPassado * -1) + " anos para a data."
+                    }
+                    
+                    console.log(alistamento)
+
+                    
+                        document.getElementById("idRespostaAnoNascimento").value = mensagem
+                }
+    
+            </script>
+        </main>
+    </body>
+</html>

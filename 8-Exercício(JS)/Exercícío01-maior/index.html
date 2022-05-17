@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Vamos conferir qual número é maior.</legend>
+                            <br>
+                        <label for="idNum">Digite três números aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum" id="idNum" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+                function conferir() {
+
+                    var num = Number(document.getElementById("idNum").value)
+                    var resultado
+
+                    if (num1 > num2) {
+                        resultado = "O primeiro número é maior que o segundo."
+                    } else {
+                        resultado = "O segundo número é maior que o primeiro."
+                    }
+
+                    document.getElementById("idResultado").value = resultado
+
+                }
+
+            </script>
+        </main>
+    </body>
+</html>

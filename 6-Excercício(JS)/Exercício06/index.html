@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Média Escolar</title>
+    </head>
+    <body>
+        <form action="">
+            <Fieldset>
+                <Legend>Vamos calcular sua média?</Legend>
+                        <br>
+                    <h3>Coloque suas notas nos campos abaixo:</h3>
+                        <br>
+                    <label for="idNota1">Nota 1:</label>
+                    <input type="number" name="nmNota1" id="idNota1" step="0.1" required>
+                        <br><br>
+                    <label for="idNota2">Nota 2:</label>
+                    <input type="number" name="nmNota2" id="idNota2" step="0.1" required>
+                        <br><br>
+                    <label for="idNota3">Nota 3:</label>
+                    <input type="number" name="nmNota3" id="idNota3" step="0.1" required>
+                        <br><br>
+                    <label for="idNota4">Nota 4:</label>
+                    <input type="number" name="nmNota4" id="idNota4" step="0.1" required>
+                        <br><br>
+                    <h3>Sua média é:</h3>
+                    <output id="idMedia">----</output> 
+                        <br><br>
+                    <input type="button" name="nmBtCalcular" id="idBtCalcular" value="Calcular" onclick="calculoMedia()">
+            </Fieldset>
+        </Form>
+
+        <script>
+
+            var nota1
+            var nota2
+            var nota3
+            var nota4
+            var media
+
+            function calculoMedia() {
+
+                nota1 = Number(document.getElementById("idNota1").value)
+                nota2 = Number(document.getElementById("idNota2").value)
+                nota3 = Number(document.getElementById("idNota3").value)
+                nota4 = Number(document.getElementById("idNota4").value)
+                media = (nota1 + nota2 + nota3 + nota4)/4
+
+                    document.getElementById("idMedia").value = media               
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital do Brasil</title>
+</head>
+<body>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Você sabe qual é a capital de alguns países?</legend>
+
+                    <label for="idCapitalBrasil">Qual é a capital do Brasil?</label>
+                        <br><br>
+                    <input type="text" name="nmCapitalBrasil" id="idCapitalBrasil" required>
+                        <br><br>
+                    <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                            <br><br>
+                        <output id="idResposta"></output> 
+
+            </fieldset>
+        </form>
+
+        <script>
+
+
+            function conferir() {
+
+                var capital = document.getElementById("idCapitalBrasil").value // aqui poderia colocar todo esse document entre parenteses com .toUpperCase para nao ter que escrever varias opções
+                var mensagem
+
+                if (capital == "Brasília" || capital == "brasília" || capital == "Brasilia" 
+                    || capital == "brasilia") {
+                    mensagem = "Parabéns, você acertou!"
+                } else {
+                    mensagem = "Ixxiii.. Tente de novo."
+                    document.getElementById("idCapitalBrasil").value = " "
+                }
+
+                
+                    document.getElementById("idResposta").value = mensagem
+            }
+
+        </script>
+    </main>
+</body>
+</html>

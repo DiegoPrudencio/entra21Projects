@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora do IMCt</title>
+    </head>
+    <body>
+        
+        <form action="">
+            <fieldset>
+                <legend>Cálculo do IMC</legend>
+                    <br>
+                    <label for="idPeso">Informe seu peso:</label><br>
+                    <input type="text" name="nmPeso" id="idPeso">
+                        <br><br>
+                    <label for="idAltura">Informe sua altura:</label><br>
+                    <input type="text" name="nmAltura" id="idAltura">
+                        <br><br>
+                    <input type="button" name="nmBtCalcula" id="idBtCalcular" value="Calcular" onclick="calculoIMC()">
+                        <br><br>
+                    <output id="idResultado"></output>
+                        <br><br>
+                    <output id="idNivelIMC"></output>
+            </fieldset>
+        </form>
+
+        <script>
+
+            var peso
+            var altura
+            var resultado
+            var nivelIMC
+            var mensagem
+
+            function calculoIMC() {
+
+                peso = Number(document.getElementById("idPeso").value)
+                altura = Number(document.getElementById("idAltura").value)
+                resultado = (peso/(altura * altura)).toFixed(1)
+
+
+                if ((resultado >= 16) && (resultado <= 16.9)) {
+                    mensagem = "Muito abaixo do peso"
+                }
+                if ((resultado > 16.9) && (resultado <= 18.4)) {
+                    mensagem = "Abaixo do peso"
+                }
+                if ((resultado > 18.4) && (resultado <= 24.9)) {
+                    mensagem = "Peso normal"
+                }
+                if ((resultado > 24.9) && (resultado <= 29.9)) {
+                    mensagem = "Acima do peso"
+                }
+                if ((resultado > 29.9) && (resultado <= 34.9)) {
+                    mensagem = "Obesidade grau I"
+                }
+                if ((resultado > 34.9) && (resultado <= 40)) {
+                    mensagem = "Obesidade grau II"
+                } 
+                if (resultado > 40) {
+                    mensagem = "Obesidade grau III"
+                }
+
+                document.getElementById("idResultado").value = "IMC: " + resultado
+                document.getElementById("idNivelIMC").value = mensagem
+            }
+
+        </script>
+
+    </body>
+</html>

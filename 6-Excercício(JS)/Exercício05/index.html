@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora do IMCt</title>
+    </head>
+    <body>
+        
+        <form action="">
+            <fieldset>
+                <legend>Cálculo do IMC</legend>
+                    <br>
+                    <label for="idPeso">Informe seu peso:</label><br>
+                    <input type="text" name="nmPeso" id="idPeso">
+                        <br><br>
+                    <label for="idAltura">Informe sua altura (em metros):</label><br>
+                    <input type="text" name="nmAltura" id="idAltura">
+                        <br><br>
+                    <output id="idResultado">IMC:</output>
+                        <br><br>
+                    <input type="button" name="nmBtCalcular" id="idBtCalcular" value="Calcular" onclick="calculoIMC()">
+            </fieldset>
+            <fieldset>
+                <legend>Peso ideal</legend>
+
+                <h3>Com base na sua altura, qual seria peso ideal?</h3>
+                        <br>
+                    <label for="idSexo">Qual seu sexo de nascimento?</label>
+                        <br><br>
+                    <input type="radio" id="idFem" name="nmGenero" value="F" checked>
+                    <label for="idFem">Feminino</label> 
+
+                    <input type="radio" name="nmGenero" id="idMasc" value="M">
+                    <label for="idMasc">Masculino</label>
+                        <br><br>
+                    <input type="button" name="nmBtCalcularPeso" id="idBtCalculaPeso" value="Calcular Peso Ideal" onclick="calculoPeso()">
+                        <br><br>
+                    <output id="idResultadoPesoIdeal">Seu peso ideal:</output>
+
+            </fieldset>
+        </form>
+
+        <script>
+
+            var peso
+            var altura
+            var resultado
+            var masculino
+            var ferminino
+            var resultadoPesoIdeal
+
+            function calculoIMC() {
+
+                peso = Number(document.getElementById("idPeso").value)
+                altura = Number(document.getElementById("idAltura").value)
+                resultado = peso/(altura*altura)
+
+                    document.getElementById("idResultado").value = resultado.toFixed(2)              
+            }
+
+            function calculoPeso() {
+
+                altura = Number(document.getElementById("idAltura").value)
+                masculino = document.getElementById("idMasc").checked
+                ferminino = document.getElementById("idFem").checked
+
+
+                if (masculino == true) {
+                    resultadoPesoIdeal = (72.7 * altura) - 58
+                } else {
+                    resultadoPesoIdeal = (62.1 * altura) - 44.7
+                }
+
+
+                    document.getElementById("idResultadoPesoIdeal").value = "Seu peso ideal: " + resultadoPesoIdeal.toFixed(2)            
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lucro Produto</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Lucro sobre produto.</legend>
+                            <br>
+                        <label for="idValorCusto">Qual o valor de custo do produto?</label>
+                            <br><br>
+                        <input type="text" name="nmValorCusto" id="idValorCusto" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+
+                function conferir() {
+
+                    let valorCusto = Number(document.querySelector("#idValorCusto").value)
+                    let valorFinal
+                    let mensagem
+
+                    if (valorCusto < 20) {
+                        valorFinal = valorCusto * (150/100)
+                        mensagem = "O valor final do produto é R$ " + (valorFinal).toFixed(2) + " reais."
+                        console.log(valorFinal);
+                    } else if (valorCusto >= 20) {
+                        valorFinal = valorCusto * (135/100)
+                        mensagem = "O valor final do produto é R$ " + (valorFinal).toFixed(2) + " reais."
+                        console.log(valorFinal);
+                    }else {
+                        mensagem = "Operação inválida"
+                        console.log(mensagem);
+                    }
+                    document.getElementById("idResultado").value = mensagem
+                }
+            </script>
+        </main>
+    </body>
+</html>

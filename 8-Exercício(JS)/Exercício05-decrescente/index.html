@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Vamos conferir qual número é maior.</legend>
+                            <br>
+                        <label for="idNum1">Digite um número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum1" id="idNum1" required>
+                            <br><br>
+                        <label for="idNum2">Digite outro número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum2" id="idNum2" required>
+                            <br><br>
+                        <label for="idNum3">Digite mais um número aqui:</label>
+                            <br><br>
+                        <input type="text" name="nmNum3" id="idNum3" required>
+                            <br><br>
+                        <input type="button" name="nmButton" id="Button" value="Conferir Resposta" onclick="conferir()">
+                                <br><br>
+                            <output id="idResultado"></output> 
+    
+                </fieldset>
+            </form>
+            <script>
+
+                function conferir() {
+
+                    var num1 = Number(document.getElementById("idNum1").value)
+                    var num2 = Number(document.getElementById("idNum2").value)
+                    var num3 = Number(document.getElementById("idNum3").value)
+                    var resultado
+
+                    if (num1 > num2 && num1 > num3 && num2 > num3) {
+                        resultado = num1 + ", " + num2 + ", " + num3
+                    } 
+                    if (num1 > num2 && num1 > num3 && num3 > num2) {
+                        resultado = num1 + ", " + num3 + ", " + num2
+                    }
+                    if (num2 > num1 && num2 > num3 && num1 > num3) {
+                        resultado = num2 + ", " + num1 + ", " + num2
+                    }
+                    if (num2 > num1 && num2 > num3 && num3 > num1) {
+                        resultado = num2 + ", " + num3 + ", " + num1
+                    }
+                    if (num3 > num1 && num3 > num2 && num1 > num2) {
+                        resultado = num3 + ", " + num1 + ", " + num2
+                    }
+                    if (num3 > num1 && num3 > num2 && num2 > num1) {
+                        resultado = num3 + ", " + num2 + ", " + num1
+                    }
+
+                    document.getElementById("idResultado").value = resultado
+
+                }
+
+            </script>
+        </main>
+    </body>
+</html>
