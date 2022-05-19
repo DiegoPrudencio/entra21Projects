@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contagem regressiva</title>
+    </head>
+    <body>
+        <header>
+            <Label>Vamos fazer uma contagem regressiva do 15 ao 3?</Label>
+            <br><br>
+        </header>
+        <main>
+
+            <output id="idOut"></output>
+                <br><br>
+            <output id="idOut2"></output>
+
+            <script>
+                var contador = 15
+                var contagem1 = ""
+                var out = document.getElementById("idOut")
+
+                while (contador > 2) {
+                    contagem1 = contagem1 + contador + " "
+                    contador-- 
+                    console.log("while " + contagem1) 
+                }
+
+                out.value = "Inicio " + contagem1 + " Fim..."
+
+                var contagem2 = ""
+                var out2 = document.getElementById("idOut2")
+
+                for (let ind = 15; ind > 2; ind--) {
+                    contagem2 = contagem2 + ind + " "
+                    console.log("For " + contagem2)  
+                }
+                
+                out2.value = "Inicio " + contagem2 + " Fim..."
+
+            </script>
+        </main>
+    </body>
+</html>

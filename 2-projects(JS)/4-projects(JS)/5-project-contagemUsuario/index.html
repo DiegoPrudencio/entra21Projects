@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contagem</title>
+    </head>
+    <body>
+        <header>
+            <Label>Vamos fazer uma contagem até o número que você nos mandar.</Label>
+            <br><br>
+        </header>
+        <main>
+            <form action="">
+                    <label for="idNum">Manda um número inteiro e positivo aqui</label> 
+                        <br><br>
+                    <input type="number" name="idNum" id="idNum" required>
+                        <br><br>
+                    <input type="button" name="nmButton" id="Button" value="Enviar" onclick="contar()">
+                        <br><br>
+                <output id="idOut"></output>
+                    <br><br>
+                <output id="idOut2"></output>
+            </form>
+
+            <script>
+
+
+
+                function contar() {
+
+                let num = Number(document.getElementById("idNum").value)
+                let contador = 1
+                let contagem1 = ""
+                let out = document.getElementById("idOut")
+                let contagem2 = ""
+                let out2 = document.getElementById("idOut2")    
+
+                while (contador <= num) {
+                    contagem1 = contagem1 + contador + " "
+                    contador++
+                    console.log("while " + contagem1) 
+                }
+
+                out.value = "Inicio " + contagem1 + " Fim..."
+
+                for (let ind = 0; ind <= num; ind++) {
+                    contagem2 = contagem2 + ind + " "
+                    console.log("For " + contagem2)  
+                }
+                
+                out2.value = "Inicio " + contagem2 + " Fim..."
+
+            }
+
+            </script>
+        </main>
+    </body>
+</html>
