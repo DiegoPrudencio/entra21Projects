@@ -1,96 +1,74 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contagem</title>
-    </head>
-    <body>
-        <header>
-            <Label>Vamos montar um intervalo e diferenciar pares e impares.</Label>
-            <br><br>
-        </header>
-        <main>
-            <form action="">
-                    <label for="idNum1">Manda um número inteiro para o começo</label> 
-                        <br><br>
-                    <input type="number" name="idNum2" id="idNum1" required>
-                        <br><br>
-                    <label for="idNum2">Manda outro número inteiro para o final</label> 
-                        <br><br>
-                    <input type="number" name="idNum2" id="idNum2" required>
-                        <br><br>
-                    <input type="radio" name="nmParidade" id="idPar">
-                        <label for="idPar">Par</label> 
-                    <input type="radio" name="nmParidade" id="idImpar">
-                        <label for="idImpar">Impar</label> 
-                        <br><br>
-                    <input type="button" name="nmButton" id="Button" value="Enviar" onclick="contar()">
-                        <br><br>
-                    <output id="idOut"></output>
-                        <br><br>
-                    <output id="idOut2"></output>
-                        <br><br>
-                    <output id="idQtPar"></output>
-                        <br><br>
-                    <output id="idQtImpar"></output>
+<html lang="en">
 
-            </form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-            <script>
+<body>
+    <form action="">
+        <label for="idLimiteInf">Limite Inferior</label><br>
+        <input type="number" name="nmLimiteInf" id="idLimiteInf">
+        <br><br>
+        <label for="idLimiteSup">Limite Superior</label><br>
+        <input type="number" name="nmLimiteSup" id="idLimiteSup">
+        <br><br>
+        <input type="radio" name="nmParidade" id="idPar" checked>
+        <label for="idPar">Par</label>
+        <input type="radio" name="nmParidade" id="idImpar">
+        <label for="idImpar">Impar</label>
+        <br><br>
+        <button type="button" onclick="contarWhile()">Contar While</button><br>
+        <output id="idOutWhile"></output><br>
+        <output id="idOutQtdPar"></output><br>
+        <output id="idOutQtdImpar"></output><br>
 
+        <input type="button" value="gerar numero randomico" onclick="gerarNum()">
+    </form>
 
+    <Script>
 
-                function contar() {
+        function contarWhile() {
+            let limiteInf = Number(document.querySelector("#idLimiteInf").value)   
+            let limiteSup = Number(document.querySelector("#idLimiteSup").value) 
+            let numPar = document.getElementById("idPar").checked
+            //let numImpar = document.getElementById("idImar").checked
+            let numerosPares = ""
+            let numerosImpares = ""
+            let cont = limiteInf
+            let contPar = 0
+            let contImpar = 0
 
-                    let num1 = Number(document.getElementById("idNum1").value)
-                    let num2 = Number(document.getElementById("idNum2").value)
-                    let par = document.getElementById("idPar").checked
-                    let impar = document.getElementById("idImpar").checked
-                    let contPar = 0
-                    let contImpar = 0
-                    let contador 
-                    let contagem1 = ""
-                    let out = document.getElementById("idOut")
-
-                    if (par == true) {
-                        contador = num1
-                        while (contador <= num2) {
-                            contagem1 = contagem1 + contador + " "
-                            contador+=2
-                            contPar++
-                            out.value = "Números pares: " + contagem1
-                        }
-                    } else {
-                        contador = num1 + 1
-                        while (contador <= num2) {
-                        contagem1 = contagem1 + contador + " "
-                        contador+=2
-                        contImpar++
-                        out.value = "Números ímpares: " + contagem1
-                        }
-                    }
-
-                    document.getElementById("idQtPar").value = "Quantidade de pares: " + contPar
-                    document.getElementById("idQtImpar").value = "Quantidade de Ímpares: " + contImpar
-
-                    let contagem2 = ""
-                    let out2 = document.getElementById("idOut2")    
-
-                    if (par == true) {
-                        for (let ind = num1; ind <= num2; ind+=2)
-                            contagem2 = contagem2 + ind + " "
-                            out2.value = "Números pares: " + contagem2
-                    } else {
-                        for (let ind = (num1 + 1); ind <= num2; ind+=2)
-                            contagem2 = contagem2 + ind + " "
-                            console.log("For " + contagem2)
-                            out2.value = "Números ímpares: " + contagem2
-                    }
+           // num % 2 == 0 Par 
+           limiteSup++
+            while (cont < limiteSup) {
+                if ((cont % 2) == 0 ) {
+                    numerosPares = numerosPares + cont + " "
+                    contPar++ 
+                }else{
+                    numerosImpares = numerosImpares + cont + " "
+                    contImpar++
+                }
+                cont++
             }
 
-            </script>
-        </main>
-    </body>
+            if (numPar) {
+                document.getElementById("idOutWhile").value = "Numeros Pares: " + numerosPares
+            }else{
+                document.getElementById("idOutWhile").value = "Numeros Impares: " + numerosImpares
+            }
+            document.getElementById("idOutQtdPar").value = "Qtd Par: " + contPar
+            document.getElementById("idOutQtdImpar").value = "Qtd Impar: " + contImpar
+        }
+
+        function gerarNum(){
+            console.log(parseInt(Math.random() * 10));
+        }
+
+    </Script>
+</body>
+
 </html>

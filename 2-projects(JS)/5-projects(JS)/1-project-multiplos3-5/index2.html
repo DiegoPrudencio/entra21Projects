@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Múltiplos de 3 e 5</title>
+    </head>
+    <body>
+        <header>
+            <legend>Múltiplos de 0 a 10 divisiveis por 3 ou 5.</legend>
+        </header>
+        <main>
+
+            <output id="idOut"></output>
+
+            <script>
+
+                var num = 0
+                var contador = 0
+                var out = document.getElementById("idOut").value
+
+                while (num < 101) {
+                    if (num % 3 == 0 || num % 5 == 0) {
+                        contador = contador + num + " "
+                        num++
+                    } else {
+                        continue
+                    }
+
+                }
+
+                out.value = contador
+
+                console.log(contador)
+
+            </script>
+        </main>
+    </body>
+</html>
