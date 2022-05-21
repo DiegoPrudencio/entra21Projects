@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idLimiteInf">Limite Inferior</label><br>
+        <input type="number" name="nmLimiteInf" id="idLimiteInf">
+        <br><br>
+        <label for="idLimiteSup">Limite Superior</label><br>
+        <input type="number" name="nmLimiteSup" id="idLimiteSup">
+        <br><br>
+        <button type="button" onclick="primo()">Ver primos</button><br>
+        <output id="idOut"></output><br>
+
+        <output id="idOutQtdPar"></output><br>
+        <output id="idOutQtdImpar"></output><br>
+
+    </form>
+
+    <script>
+
+        function primo() {
+            var limiteInf = Number(document.querySelector("#idLimiteInf").value)
+            var limiteSup = Number(document.querySelector("#idLimiteSup").value)
+            var primo
+            var contador
+            var out = document.getElementById("idOut")
+
+            for (primo = limiteInf; primo < (limiteSup + 1); primo++) {
+                if (primo % primo == 0 && primo % 1 == 0) {
+                    contador = contador + primo + " "
+                } else {
+
+                }
+                
+            }
+            
+         out.value = contador
+        }
+
+    </script>
+</body>
+</html>

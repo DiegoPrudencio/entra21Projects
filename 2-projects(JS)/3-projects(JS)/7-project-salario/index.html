@@ -34,6 +34,10 @@
                         mensagem = "Você esta insento: R$ " + salarioBruto + " reais."
                         console.log(salarioBruto);
                     } else if (salarioBruto > 600 && salarioBruto <= 1200) {
+                        salarioLiquido = salarioBruto * (75/100)
+                        mensagem = "Você teve desconto de 25%: R$ " + salarioLiquido + " reais"
+                        console.log(salarioLiquido);
+                    } else if (salarioBruto > 1200 && salarioBruto <= 2000) {
                         salarioLiquido = salarioBruto * (70/100)
                         mensagem = "Você teve desconto de 30%: R$ " + salarioLiquido + " reais"
                         console.log(salarioLiquido);
