@@ -20,10 +20,10 @@
         <label for="idFormas">Escolha qual forma geométrica você quer saber a área</label>
         <br><br>
             <select name="nmFormas" id="idFormas">
-            <option value="circulo">Círculo</option>
-            <option value="retangulo">Retângulo</option>
-            <option value="trianguloRetangulo">Trianângulo Retângulo</option>
-            <option value="trianguloEquilatero">Trianângulo Equilátero</option>
+                <option value="circulo">Círculo</option>
+                <option value="retangulo">Retângulo</option>
+                <option value="trianguloRetangulo">Trianângulo Retângulo</option>
+                <option value="trianguloEquilatero">Trianângulo Equilátero</option>
 
         <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Selecionar" onclick="selecionar()">
         <br><br>
@@ -45,7 +45,6 @@
                 </fieldset>
             </form>
         </section>
-            <br><br>
         <section>
             <form id="idSectionRetangulo" action="" hidden>
                 <fieldset>
@@ -62,9 +61,8 @@
                 </fieldset>
             </form>
         </section>
-            <br><br>
         <section>
-            <form id="isSectionTrianguloRetangulo" action="" hidden>
+            <form id="idSectionTrianguloRetangulo" action="" hidden>
                 <fieldset>
                     <Legend>Triângulo Retângulo</Legend>
                         <h4>Informe a altura e a base:</h4>
@@ -79,7 +77,6 @@
                 </fieldset>
             </form>
         </section>
-            <br><br>
         <section>
             <form id="idSectionTrianguloEquilatero" action="" hidden>
                 <fieldset>
@@ -101,12 +98,35 @@
 
             function selecionar() {
                 var formas = document.querySelector("#idFormas").value
-                var sectionCirculo = document.querySelector("#idsectionCirculo")
+                var sectionCirculo = document.querySelector("#idSectionCirculo")
+                var sectionRetangulo = document.querySelector("#idSectionRetangulo")
+                var sectionTrianguloRetangulo = document.querySelector("#idSectionTrianguloRetangulo")
+                var sectionTrianguloEquilatero = document.querySelector("#idSectionTrianguloEquilatero")
 
-                if (formas == 'circulo') {
-                    sectionCirculo.show()
+                if (formas == "circulo") {
+                    document.querySelector("#idSectionCirculo").hidden = false
+                    document.querySelector("#idSectionRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloEquilatero").hidden = true
                 }
-                
+                if (formas == "retangulo") {
+                    document.querySelector("#idSectionCirculo").hidden = true
+                    document.querySelector("#idSectionRetangulo").hidden = false
+                    document.querySelector("#idSectionTrianguloRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloEquilatero").hidden = true
+                }
+                if (formas == "trianguloRetangulo") {
+                    document.querySelector("#idSectionCirculo").hidden = true
+                    document.querySelector("#idSectionRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloRetangulo").hidden = false
+                    document.querySelector("#idSectionTrianguloEquilatero").hidden = true
+                }
+                if (formas == "trianguloEquilatero") {
+                    document.querySelector("#idSectionCirculo").hidden = true
+                    document.querySelector("#idSectionRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloRetangulo").hidden = true
+                    document.querySelector("#idSectionTrianguloEquilatero").hidden = false
+                }
             }
 
             function calcularCirculo () {
@@ -150,7 +170,7 @@
                 var resultadoAreaTrianguloEquilatero
 
                 trianguloEquilatero = Number(document.getElementById("idTrianguloEquilatero").value)
-                resultadoAreaTrianguloEquilatero = (trianguloEquilatero**2)*3**(1/2)/4
+                resultadoAreaTrianguloEquilatero = ((trianguloEquilatero**2)*3**(1/2))/4
 
                 document.getElementById("idAreaTrianguloEquilatero").value = resultadoAreaTrianguloEquilatero
             }
