@@ -9,34 +9,45 @@
 <body>
     <header>
         <h2>Hora de calcular a área de cada forma geométrica:</h2>
-        <nav>
+        <!-- <nav>
             <ul>
                 <a href="#sectionCirculo" id="idSectionCirculo" class="link">Círculo</a>   |   
                 <a href="#sectionRetangulo" id="idSectionRetangulo" class="link" >Retângulo</a> </li>   |   
                 <a href="#sectionTrianguloRetangulo" id="idSectionTrianguloRetangulo" class="link">Triangulo Retângulo</a>   |   
                 <a href="#sectionTrianguloEquilatero" id="idSectionTrianguloEquilatero" class="link">Triângulo Equilátero</a>   |   
             </ul>
-        </nav>
+        </nav> -->
+        <label for="idFormas">Escolha qual forma geométrica você quer saber a área</label>
+        <br><br>
+            <select name="nmFormas" id="idFormas">
+            <option value="circulo">Círculo</option>
+            <option value="retangulo">Retângulo</option>
+            <option value="trianguloRetangulo">Trianângulo Retângulo</option>
+            <option value="trianguloEquilatero">Trianângulo Equilátero</option>
+
+        <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Selecionar" onclick="selecionar()">
+        <br><br>
+
     </header>
     <main>
         <section>
-            <form id="SectionCirculo" action="">
+            <form id="idSectionCirculo" action="" hidden>
                 <fieldset>
                     <Legend>Círculo</Legend>
                                 <br>
-                        <label for="idCirculo">Qual é o raio?</label>
+                        <label for="idCirculo" >Qual é o raio?</label>
                             <input type="number" name="nmCirculo" id="idCirculo" step="0.1">
                                 <br>
-                        <h5>A área do círuclo é:</h5>
+                        <h5>A área do círuclo é:</h5> 
                             <output id="idAreaCirculo">----</output> 
                                 <br><br>
-                            <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Calcular área" onclick="calcularCirculo()">
+                        <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Calcular área" onclick="calcularCirculo()">
                 </fieldset>
             </form>
         </section>
             <br><br>
         <section>
-            <form id="sectionRetangulo" action="">
+            <form id="idSectionRetangulo" action="" hidden>
                 <fieldset>
                     <Legend>Retângulo</Legend>
                         <h4>Informe o tamanho dos lados:</h4>
@@ -53,7 +64,7 @@
         </section>
             <br><br>
         <section>
-            <form id="sectionTrianguloRetangulo" action="">
+            <form id="isSectionTrianguloRetangulo" action="" hidden>
                 <fieldset>
                     <Legend>Triângulo Retângulo</Legend>
                         <h4>Informe a altura e a base:</h4>
@@ -70,7 +81,7 @@
         </section>
             <br><br>
         <section>
-            <form id="sectionTrianguloEquilatero" action="">
+            <form id="idSectionTrianguloEquilatero" action="" hidden>
                 <fieldset>
                     <Legend>Triângulo Equilátero:</Legend>
                             <br>
@@ -86,6 +97,17 @@
         </section>
 
         <script>
+
+
+            function selecionar() {
+                var formas = document.querySelector("#idFormas").value
+                var sectionCirculo = document.querySelector("#idsectionCirculo")
+
+                if (formas == 'circulo') {
+                    sectionCirculo.show()
+                }
+                
+            }
 
             function calcularCirculo () {
                 var circulo

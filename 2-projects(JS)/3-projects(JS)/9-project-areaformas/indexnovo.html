@@ -11,11 +11,8 @@
 
     </header>
     <main>
-        
-        <section>
-            <form action="">
+        <form action="">
                 <fieldset>
-                    <Legend>Escolha qual forma geométrica você quer saber a área</Legend>
                                 <br>
                         <label for="idFormas">Escolha qual forma geométrica você quer saber a área</label>
                             <br><br>
@@ -24,7 +21,13 @@
                             <option value="retangulo">Retângulo</option>
                             <option value="trianguloRetangulo">Trianângulo Retângulo</option>
                             <option value="trianguloEquilatero">Trianângulo Equilátero</option>
-                                <br><br>
+
+                            <br><br>
+
+                            <label for="idCirculo">Qual é o raio?</label>
+                            <input type="number" name="nmCirculo" id="idCirculo" step="0.1">
+
+
 
                         <!--<input type="checkbox" name="nmCirculo" id="idCirculo">
                         <label for="idCirculo">Círculo</label>
@@ -35,10 +38,10 @@
                         <input type="checkbox" name="nmTrianguloEquilatero" id="idTrianguloEquilatero">
                         <label for="idTrianguloEquilatero">Triângulo Equilátero</label>
                         <br><br> -->
+                                                    <!-- Círculo -->
                         <input type="button" name="nmBtCalculaCirculo" id="idBtCalcularCirculo" value="Selecionar" onclick="selecionar()">
                 </fieldset>
             </form>
-        </section>
 
         <script>
 

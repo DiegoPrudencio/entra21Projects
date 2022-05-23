@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+
+            <input type="button" value="gerar numero randomico" onclick="gerarNum()">
+                <br><br>
+            <output id="idOutNumA">Números sorteados:</output>
+                <br><br>
+            <output id="idOutNumB">Números acima de cinco:</output>
+                <br><br>
+            <output id="idOutNumC">Números divisiveis por 3:</output>
+
+            </form>
+            
+            <script>
+
+                //let numRandomico = parseInt(Math.random() * 11)
+                acima5 = []
+
+                function gerarNum() {
+                    var outA = document.querySelector("#idOutNumA")
+                    var outB = document.querySelector("#idOutNumB")
+                    var outC = document.querySelector("#idOutNumC")
+                    var sorteados
+                    var divisivel3 = 0
+                    var acima5 = 0
+                    let numRandomico = parseInt(Math.random() * 11)
+                
+
+
+                    if (numRandomico > 5) {
+                        acima5 = (acima5 + 1)
+                    }
+                    if (numRandomico % 3 == 0) {
+                        divisivel3 = (divisivel3 + 1)                  
+                    }
+
+                    outA.value = "Números sorteados: " + numRandomico
+                    outB.value = "Números acima de cinco: " + acima5
+                    outC.value = "Números divisiveis por 3: " + divisivel3
+                }
+
+                console.log(acima5);
+
+            </script>
+        </main>
+    </body>
+</html>
