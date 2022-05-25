@@ -1,0 +1,34 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="button" name="btAcessar" id="idAcessar" value="Gerar" onclick="gerar()">
+        <output id="idOut"></output>
+
+        <script>
+
+
+            function gerar() {
+                let numFibo = 0
+                let numAnt = 0
+                let numSeq = 1
+                let numProx = 0
+                let output = document.getElementById("idOut")
+                
+                while (numFibo < 10) {
+                    numProx = numSeq + numAnt
+                    numAnt = numSeq
+                    numSeq = numProx
+                    numFibo++
+                    console.log(numSeq);
+                    
+                }
+            }
+        </script>
+    </body>
+</html>

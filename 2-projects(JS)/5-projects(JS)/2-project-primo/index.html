@@ -17,9 +17,6 @@
         <button type="button" onclick="primo()">Ver primos</button><br>
         <output id="idOut"></output><br>
 
-        <output id="idOutQtdPar"></output><br>
-        <output id="idOutQtdImpar"></output><br>
-
     </form>
 
     <script>
@@ -27,20 +24,21 @@
         function primo() {
             var limiteInf = Number(document.querySelector("#idLimiteInf").value)
             var limiteSup = Number(document.querySelector("#idLimiteSup").value)
-            var primo
-            var contador
-            var out = document.getElementById("idOut")
-
-            for (primo = limiteInf; primo < (limiteSup + 1); primo++) {
-                if (primo % primo == 0 && primo % 1 == 0) {
-                    contador = contador + primo + " "
-                } else {
-
-                }
-                
-            }
             
-         out.value = contador
+            var isPrimo = true
+
+            for (let n = limiteInf; n < (limiteSup + 1); primo++) {
+                for (let i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        isPrimo = false
+                    }
+                }
+
+                if (isPrimo) {
+                    console.log(n + " é primo.");                
+                }
+                isPrimo = true
+            }
         }
 
     </script>

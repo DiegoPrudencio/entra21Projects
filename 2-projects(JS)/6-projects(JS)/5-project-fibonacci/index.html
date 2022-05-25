@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="button" name="nmButton" id="idButton" value="Criar" onclick="criar()">
+            <br><br>
+            <output id="idOut"></output>
+        </form>
+
+        <script>
+
+            var numFiboArray = []
+            var elemento
+            var out = document.getElementById("idOut")
+            var index
+
+            function criar() {
+                
+                let numFibo = 0
+                let numAnt = 0
+                let numSeq = 1
+                let numProx = 0
+
+                while (numFibo < 16) {
+                    numProx = numSeq + numAnt
+                    numAnt = numSeq
+                    numSeq = numProx
+                    elemento = numSeq
+                    numFiboArray.push(elemento) 
+                    numFibo++
+                    //console.log(numSeq);
+                }
+           
+                
+                for (index = 0; index < numFiboArray.length; index++) {
+                    console.log(" - " + numFiboArray[index])             
+                }   
+
+                console.log(numFiboArray[0])
+                console.log(numFiboArray[1])
+            }
+
+            out.value = numFiboArray
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

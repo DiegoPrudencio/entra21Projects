@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="button" name="nmButton" id="idButton" value="Criar" onclick="criar()">
+            <br><br>
+            <output id="idOut"></output>
+        </form>
+
+        <script>
+
+            var numVetor = []
+            var elemento
+            const primeira = 5
+            const segunda = 3
+            var out = document.getElementById("idOut")
+            var index
+
+            function criar() {
+                
+                while (numVetor.length <= 9) { 
+                    elemento = primeira
+                    numVetor.push(elemento) 
+                    elemento = segunda
+                    numVetor.push(elemento)           
+                }
+
+                for (index = 0; index < numVetor.length; index++) {
+                    console.log(" - " + numVetor[index])             
+                }   
+
+                console.log(numVetor[4])
+            }
+            out.value = numVetor
+
+        </script>
+    </body>
+</html>

@@ -29,26 +29,31 @@
                     var outA = document.querySelector("#idOutNumA")
                     var outB = document.querySelector("#idOutNumB")
                     var outC = document.querySelector("#idOutNumC")
-                    var sorteados
+                    var sorteados = ""
                     var divisivel3 = 0
                     var acima5 = 0
-                    let numRandomico = parseInt(Math.random() * 11)
+
+                    var numRandomico
                 
-
-
-                    if (numRandomico > 5) {
-                        acima5 = (acima5 + 1)
+                    for (let i = 0; i < 20; i++) {
+                        numRandomico = parseInt(Math.random() * 11)
+                        console.log(numRandomico)
+                        if (numRandomico > 5) {
+                            acima5++
+                        }
+                        if (numRandomico % 3 == 0) {
+                            divisivel3++  
+                        }
+                        sorteados = sorteados + numRandomico + " "
                     }
-                    if (numRandomico % 3 == 0) {
-                        divisivel3 = (divisivel3 + 1)                  
-                    }
 
-                    outA.value = "Números sorteados: " + numRandomico
+                    outA.value = "Números sorteados: " + sorteados  
                     outB.value = "Números acima de cinco: " + acima5
                     outC.value = "Números divisiveis por 3: " + divisivel3
-                }
+                
 
                 console.log(acima5);
+                }
 
             </script>
         </main>

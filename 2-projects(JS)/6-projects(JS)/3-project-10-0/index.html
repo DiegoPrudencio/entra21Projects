@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="button" name="nmButton" id="idButton" value="Criar" onclick="criar()">
+            <br><br>
+            <output id="idOut"></output>
+        </form>
+
+        <script>
+
+            var numDecrescente = []
+            var elemento = 10
+            var out = document.getElementById("idOut")
+            var index
+
+            function criar() {
+                
+                while (numDecrescente.length <= 9) { 
+                    elemento = (elemento - 1)
+                    numDecrescente.push(elemento)           
+                }
+
+                for (index = 0; index < numDecrescente.length; index++) {
+                    console.log(" - " + numDecrescente[index])             
+                }   
+            }
+            out.value = numDecrescente
+
+        </script>
+    </body>
+</html>

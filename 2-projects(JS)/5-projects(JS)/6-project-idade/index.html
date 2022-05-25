@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <form action="">
+            <label for="idIdade">Insira a sua idade:</label>
+            <br><br>
+            <input type="number" name="nmIdade" id="idIdade" step="1">
+            <br><br>
+            <input type="button" name="nmBtIdade" id="idBtIdade" value="Envair" onclick="enviar()">
+            <input type="button" name="nmBtRelatorio" id="idRelatorio" value="Relatório" onclick="relatorio()">
+            <br><br>
+            <output id="idOut1">A maior idade é:</output><br>
+            <output id="idOut2">Idade maiores que 18 anos:</output><br>
+            <output id="idOut3">Idade menores que 5 anos:</output>
+        </form>
+
+        <script>
+
+            function enviar() {
+
+                var idade = Number(document.getElementById("idIdade").value)
+                var mediaIdade
+                var somarIdade = 0
+                var contadorIdade = 0
+                var maiores18 = 0
+                var menores5 = 0
+                var maiorIdade = 0
+
+                somarIdade = somarIdade + idade
+                contadorIdade++
+
+                mediaIdade = (somarIdade/contadorIdade).toFixed(2)
+
+                if (idade > maiorIdade) {
+                    maiorIdade = idade
+                    //console.log(maiorIdade)
+                }
+                if (idade > 18) {
+                    maiores18++
+                    //console.log(maiores18);
+                }
+                if (idade < 5) {
+                    menores5++
+                    //console.log(menores5)
+                }
+                
+                let out1 = document.getElementById("idOut1").value
+                let out2 = document.getElementById("idOut2").value
+                let out3 = document.getElementById("idOut3").value
+
+                out1.value = maiorIdade
+                out2.value = maiores18
+                out3.value = menores5
+            }
+
+
+        </script>
+    </body>
+</html>
