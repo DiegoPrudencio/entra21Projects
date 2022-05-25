@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temperatura</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Temperatura</legend>
+                    <br><br>
+                    <label for="idLbTemp">Insira a temperatura em graus Celcius para converter para Fahrenheit:</label>
+                    <br><br>
+                    <input type="number" name="nmTemp" id="idTemp" step="0.1">
+                    <br><br>
+                    <input type="button" name="nmBtITemp" id="idBtTemp" value="Converter" onclick="converter()">
+                    <br><br>
+                    <output id="idOut"></output>
+                </fieldset>
+            </form>
+            <script>
+
+
+                function converter() {
+
+                    var celcius = Number(document.querySelector("#idTemp").value)
+                    var fahrenheit
+                    var out = document.querySelector("#idOut")
+
+                    fahrenheit = (9 * celcius + 160)/5
+
+                    out.value = "A temperatura em Fahrenheit é: " + fahrenheit + " graus."
+                }
+            </script>
+        </main>
+    </body>
+</html>

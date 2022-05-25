@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temperatura</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Temperatura</legend>
+                    <br><br>
+                    <label for="idLbTemp">Insira a temperatura e informa sua unidade de medida:</label>
+                    <br><br>
+                    <input type="number" name="nmTemp" id="idTemp" step="0.1">
+                    <br><br>
+                    <input type="radio" name="nmTemperaturas" id="idCelcius" checked>
+                    <label for="idCelcius">Celcius</label>
+                    <input type="radio" name="nmTemperaturas" id="idFahrenheit">
+                    <label for="idFahrenheit">Fahrenheit</label>
+                    <input type="radio" name="nmTemperaturas" id="idKelvin">
+                    <label for="idKelvin">Kelvin</label>
+                    <br><br>
+                    <input type="button" name="nmBtITemp" id="idBtTemp" value="Converter" onclick="converter()">
+                    <br><br>
+                    <output id="idOut"></output>
+                    <br><br>
+                    <output id="idOut2"></output>
+                </fieldset>
+            </form>
+            <script>
+
+
+
+                function converter() {
+
+                    var temperatura = Number(document.querySelector("#idTemp").value)
+                    var celcius = document.querySelector("#idCelcius").checked
+                    var kelvin = document.querySelector("#idKelvin").checked
+                    var fahrenheit = document.querySelector("#idFahrenheit").checked
+                    var out = document.querySelector("#idOut")  
+                    var out2 = document.querySelector("#idOut2") 
+
+                    let tempCelcius
+                    let tempFahrenheit
+                    let tempKelvin
+
+                    if (celcius) {
+
+                        tempFahrenheit = (9 * temperatura + 160)/5
+                            out.value = "A temperatura em Fahrenheit é: " + tempFahrenheit + " graus."
+                        tempKelvin = ((temperatura + 273.15)).toFixed(2)
+                            out2.value = "A temperatura em Kelvin é: " + tempKelvin + " graus."
+                        
+                    } if (fahrenheit) {
+
+                        tempCelcius= (5* (temperatura - 32) / 9).toFixed(2)
+                            out.value = "A temperatura em Celcius é: " + tempCelcius + " graus."
+                        tempKelvin = (((5 * (temperatura - 32)) / 9) + 273.15).toFixed(2)
+                            out2.value = "A temperatura em Kelvin é: " + tempKelvin + " graus."
+                        
+                    } if (kelvin) {
+                        tempFahrenheit = (((9 * (temperatura - 273.15)) / 5) + 32).toFixed(2)
+                        //((9*((temperatura - 273,15) )/5) + 32).toFixed(2)
+                            out.value = "A temperatura em Fahrenheit é: " + tempFahrenheit + " graus."
+                        tempCelcius = ((temperatura - 273.15)).toFixed(2)
+                            out2.value = "A temperatura em Celcius é: " + tempCelcius + " graus."
+                    }                   
+                                     
+                }
+            </script>
+        </main>
+    </body>
+</html>
