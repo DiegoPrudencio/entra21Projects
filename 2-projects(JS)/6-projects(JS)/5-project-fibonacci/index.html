@@ -27,7 +27,7 @@
                 let numSeq = 1
                 let numProx = 0
 
-                while (numFibo < 15) {
+                while (numFibo < 16) {
                     numProx = numSeq + numAnt
                     numAnt = numSeq
                     numSeq = numProx
@@ -37,6 +37,7 @@
                     //console.log(numSeq);
                 }
            
+                numFiboArray.unshift(1)
                 
                 for (index = 0; index < numFiboArray.length; index++) {
                     console.log(" - " + numFiboArray[index])             
@@ -45,6 +46,7 @@
                 console.log(numFiboArray[0])
                 console.log(numFiboArray[1])
                 console.log(numFiboArray)
+                console.table(numFiboArray)
             }
 
             out.value = numFiboArray

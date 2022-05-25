@@ -22,9 +22,14 @@
 
             function criar() {
                 
-                while (num5.length <= 9) { 
+                /*while (num5.length <= 9) { 
                     elemento = (elemento + 5)
                     num5.push(elemento)           
+                }*/
+
+                for (let i = 0; i < 10; i++) {
+                    elemento = elemento + 5
+                    num5[i] = elemento
                 }
 
                 for (index = 0; index < num5.length; index++) {
