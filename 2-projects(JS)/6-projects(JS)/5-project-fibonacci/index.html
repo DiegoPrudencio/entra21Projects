@@ -22,12 +22,12 @@
 
             function criar() {
                 
-                let numFibo = 0
+                let numFibo = 1
                 let numAnt = 0
                 let numSeq = 1
                 let numProx = 0
 
-                while (numFibo < 16) {
+                while (numFibo < 15) {
                     numProx = numSeq + numAnt
                     numAnt = numSeq
                     numSeq = numProx
@@ -44,6 +44,7 @@
 
                 console.log(numFiboArray[0])
                 console.log(numFiboArray[1])
+                console.log(numFiboArray)
             }
 
             out.value = numFiboArray
