@@ -24,12 +24,21 @@
 
             function criar() {
                 
-                while (numVetor.length <= 9) { 
+                for (let i = 0; i < 10; i++) {
+                    if ((i % 2) == 0) {
+                        numVetor.push(5)
+                    } else {
+                        numVetor.push(3)
+                    }
+                    
+                }
+                
+                /*while (numVetor.length <= 9) { 
                     elemento = primeira
                     numVetor.push(elemento) 
                     elemento = segunda
                     numVetor.push(elemento)           
-                }
+                }*/
 
                 for (index = 0; index < numVetor.length; index++) {
                     console.log(" - " + numVetor[index])             
