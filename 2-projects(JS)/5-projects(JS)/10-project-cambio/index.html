@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casa de Câmbio</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Conversão de Moeda</legend>
+                    <br><br>
+                    <label for="idValor">Diga qual a moeda de origem, insira o valor e a moeda de saída:</label>
+                    <br><br>
+                    <select name="nmMoedasEntrada" id="idMoedasEntrada">
+                        <option value="real">Real</option>
+                        <option value="dolarAmericano">Dólar Americano</option>
+                        <option value="euro">Euro</option>
+                        <option value="libraEsterlina">Libra Esterlina</option>
+                        <option value="dolarCanadense">Dólar Canadense</option>
+
+                    <!--<input type="radio" name="nmMoedasEntrada" id="idReal" checked>
+                    <label for="idReal">Real</label>
+                    <input type="radio" name="nmMoedasEntrada" id="idDolarAmericano">
+                    <label for="idDolarAmericano">Dólar Americano</label>
+                    <input type="radio" name="nmMoedasEntrada" id="idEuro">
+                    <label for="idEuro">Euro</label>
+                    <input type="radio" name="nmMoedasEntrada" id="idLibraEsterlina">
+                    <label for="idLibraEsterlina">Libra Esterlina</label>
+                    <input type="radio" name="nmMoedasEntrada" id="idDolarCanadense">
+                    <label for="idDolarCanadense">Dólar Canadense</label> -->
+
+                    <input type="number" name="nmValor" id="idValor" step="0.1" required>
+
+                    <!-- <input type="radio" name="nmMoedasSaida" id="idReal" checked>
+                    <label for="idReal">Real</label>
+                    <input type="radio" name="nmMoedasSaida" id="idDolarAmericano">
+                    <label for="idDolarAmericano">Dólar Americano</label>
+                    <input type="radio" name="nmMoedasSaida" id="idEuro">
+                    <label for="idEuro">Euro</label>
+                    <input type="radio" name="nmMoedasSaida" id="idLibraEsterlina">
+                    <label for="idLibraEsterlina">Libra Esterlina</label>
+                    <input type="radio" name="nmMoedasSaida" id="idDolarCanadense">
+                    <label for="idDolarCanadense">Dólar Canadense</label> -->
+
+                    <select name="nmMoedasSaida" id="idMoedasSaida">
+                        <option value="real">Real</option>
+                        <option value="dolarAmericano">Dólar Americano</option>
+                        <option value="euro">Euro</option>
+                        <option value="libraEsterlina">Libra Esterlina</option>
+                        <option value="dolarCanadense">Dólar Canadense</option>
+                    <br><br>
+                    <input type="button" name="nmBtITemp" id="idBtTemp" value="Converter" onclick="converter()">
+                    <br><br>
+                    <output id="idOut"></output>
+                </fieldset>
+            </form>
+            <script>
+
+
+                function converter() {
+
+                    var valorEntrada = document.querySelector("#idMoedasEntrada").value
+                    var valor = Number(document.querySelector("#idValor").value)
+                    var valorSaida = document.querySelector("#idMoedasSaida").value
+                    var conversao
+                    //var out = document.querySelector("#idOut")
+
+                    var real
+                    var dolarAmericano
+                    var euro
+                    var libraEsterlina
+                    var dolarCanadense
+
+
+                    if (valorEntrada == "real" && valorSaida == "dolarAmericano") {
+                        conversao = (valor * 0.21)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " reais é " + conversao + " dólares americano."
+                    } else if (valorEntrada == "real" && valorSaida == "euro") {
+                        conversao = (valor * 0.19)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " reais é " + conversao + " euros."
+                    } else if (valorEntrada == "real" && valorSaida == "libraEsterlina") {
+                        conversao = (valor * 0.16)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " reais é " + conversao + " libra esterlina." 
+                    } else if (valorEntrada == "real" && valorSaida == "dolarCanadense") {
+                        conversao = (valor * 0.27)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " reais é " + conversao + " dólares canadense." 
+                    }
+
+
+                    if (valorEntrada == "dolarAmericano" && valorSaida == "real") {
+                        conversao = (valor * 4.83)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dólares é " + conversao + " reais."
+                    } else if (valorEntrada == "dolarAmericano" && valorSaida == "euro") {
+                        conversao = (valor * 0.93)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dólares é " + conversao + " euros."
+                    } else if (valorEntrada == "dolarAmericano" && valorSaida == "libraEsterlina") {
+                        conversao = (valor * 0.80)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dólares é " + conversao + " libras esterlina."
+                    } else if (valorEntrada == "dolarAmericano" && valorSaida == "dolarCanadense") {
+                        conversao = (valor * 1.28)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dólares é " + conversao + " dólares canadense."
+                    }
+
+                    if (valorEntrada == "euro" && valorSaida == "real") {
+                        conversao = (valor * 5.17)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " euros é " + conversao + " reais."
+                    } else if (valorEntrada == "euro" && valorSaida == "dolarAmericano") {
+                        conversao = (valor * 1.07)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " euros é " + conversao + " dólares americano."
+                    } else if (valorEntrada == "euro" && valorSaida == "libraEsterlina") {
+                        conversao = (valor * 0.85)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " euros é " + conversao + " libras esterlina."
+                    } else if (valorEntrada == "euro" && valorSaida == "dolarCanadense") {
+                        conversao = (valor * 1.37)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " euros é " + conversao + " dólares canadense."
+                    }
+
+                    if (valorEntrada == "libraEsterlina" && valorSaida == "real") {
+                        conversao = (valor * 6.08)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " libra esterlina é " + conversao + " reais."
+                    } else if (valorEntrada == "libraEsterlina" && valorSaida == "dolarAmericano") {
+                        conversao = (valor * 1.26)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " libra esterlina é " + conversao + " dólares americano."
+                    } else if (valorEntrada == "libraEsterlina" && valorSaida == "euro") {
+                        conversao = (valor * 1.17)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " libra esterlina é " + conversao + " euros."
+                    } else if (valorEntrada == "libraEsterlina" && valorSaida == "dolarCanadense") {
+                        conversao = (valor * 1.61)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " libra esterlina é " + conversao + " dólares canadense."
+                    }
+
+                    if (valorEntrada == "dolarCanadense" && valorSaida == "real") {
+                        conversao = (valor * 3.77)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dolar canadense é " + conversao + " reais."
+                    } else if (valorEntrada == "dolarCanadense" && valorSaida == "dolarAmericano") {
+                        conversao = (valor * 0.78)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dolar canadense é " + conversao + " dólares americano."
+                    } else if (valorEntrada == "dolarCanadense" && valorSaida == "euro") {
+                        conversao = (valor * 0.73)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dolar canadense é " + conversao + " euros."
+                    } else if (valorEntrada == "dolarCanadense" && valorSaida == "libraEsterlina") {
+                        conversao = (valor * 0.62)
+                        document.querySelector("#idOut").value = "O valor de " + valor + " dolar canadense é " + conversao + " libras esterlina."
+                    }
+                }
+            </script>
+        </main>
+    </body>
+</html>
