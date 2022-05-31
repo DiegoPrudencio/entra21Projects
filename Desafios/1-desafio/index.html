@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset id="calculadora">
+                    <legend id="legendTitulo">Calculadora</legend>
+                            <br>
+                        <input type="text" name="nmVisor" id="idVisor" required>
+                        <output id="idResultado"></output> 
+
+                        <input type="button" class="button" name="nmBtZero" id="idBtZero" value="0">
+                        <input type="button" class="button" name="nmBtUm" id="idBtUm" value="1">
+                        <input type="button" class="button" name="nmBtDois" id="idBtDois" value="2">
+                        <input type="button" class="button" name="nmBtTres" id="idBtTres" value="3">
+                        <input type="button" class="button" name="nmBtQuatro" id="idBtQuatro" value="4">
+                        <input type="button" class="button" name="nmBtCinco" id="idBtCinco" value="5">
+                        <input type="button" class="button" name="nmBtSeis" id="idBtSeis" value="6">
+                        <input type="button" class="button" name="nmBtSete" id="idBtSete" value="7">
+                        <input type="button" class="button" name="nmBtOito" id="idBtOito" value="8">
+                        <input type="button" class="button" name="nmBtNove" id="idBtNove" value="9">
+
+                        <input type="button" class="button" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
+                        <input type="button" class="button" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
+                        <input type="button" class="button" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
+                        <input type="button" class="button" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
+
+
+    
+                </fieldset>
+
+    
+            </form>
+            <script>
+    
+                var num1
+                var num2 
+                var resultado
+    
+                function somarValores(){
+                    
+                    num1 = Number(document.getElementById("idNum1").value)
+                    num2 = Number(document.getElementById("idNum2").value)
+                    resultado = num1 + num2
+                    document.getElementById("idResultado").value = resultado
+                }
+    
+                function subtrairValores(){
+    
+                    num1 = Number(document.getElementById("idNum1").value)
+                    num2 = Number(document.getElementById("idNum2").value)
+                    resultado = num1 - num2
+                    document.getElementById("idResultado").value = resultado
+    
+                }
+    
+                function multiplicarValores(){
+    
+                    num1 = Number(document.getElementById("idNum1").value)
+                    num2 = Number(document.getElementById("idNum2").value)
+                    resultado = num1 * num2
+                    document.getElementById("idResultado").value = resultado
+    
+                }
+    
+                function dividirValores(){
+    
+                    num1 = Number(document.getElementById("idNum1").value)
+                    num2 = Number(document.getElementById("idNum2").value)
+                    resultado = num1 / num2
+                    document.getElementById("idResultado").value = resultado
+    
+                }
+            </script>
+        </main>
+    </body>
+</html>

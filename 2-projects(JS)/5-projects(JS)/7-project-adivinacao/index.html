@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sorteio</title>
+    </head>
+    <body>
+        <form action="">
+            <label for="idNum">Manda um número inteiro e positivo aqui</label> 
+                <br><br>
+            <input type="number" name="idNum" id="idNum" required>
+                <br><br>
+            <input type="button" name="nmButton" id="Button" value="Enviar" onclick="adivinhacao()">
+                <br><br>
+        <output id="idOut"></output>
+    </form>
+
+
+    <script>
+        var numRandomico = parseInt(Math.random() * 11)
+            if (numRandomico == 0) {
+                    numRandomico = 1
+                }
+            console.log(numRandomico);
+
+        var mensagem = document.getElementById("idOut")
+        var tentativa = 0
+
+        function adivinhacao() {
+        tentativa++
+        console.log(tentativa);
+
+        let numUser = Number(document.getElementById("idNum").value)
+
+            if (tentativa > 0 && tentativa < 3) {
+                if (numUser == numRandomico) {
+                    mensagem.value = "O número foi descoberto"                
+                } else if (numRandomico < numUser) {
+                    mensagem.value = "O número é maior que sorteado"
+                } else if (numRandomico > numUser) {
+                    mensagem.value = "O número é menor que sorteado"   
+                }
+                document.getElementById("idNum").value = ""
+            } else if (tentativa = 3) {
+                if (numUser == numRandomico) {
+                    mensagem.value = "O número foi descoberto"                
+                } else {
+                    mensagem.value = "Você perdeu o jogo, o número sorteado era " + numRandomico
+
+                }
+                document.getElementById("idNum").disabled = true
+            }
+        }
+
+
+
+    </script>
+
+        
+    </body>
+</html>
