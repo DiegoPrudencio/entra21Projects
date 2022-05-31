@@ -34,7 +34,7 @@
 
         let numUser = Number(document.getElementById("idNum").value)
 
-            if (tentativa > 0 && tentativa < 3) {
+            if (tentativa < 3) {
                 if (numUser == numRandomico) {
                     mensagem.value = "O número foi descoberto"                
                 } else if (numRandomico < numUser) {
