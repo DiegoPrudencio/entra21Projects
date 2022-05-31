@@ -27,7 +27,17 @@
                 let numSeq = 1
                 let numProx = 0
 
-                while (numFibo < 16) {
+                for (let i = 0; i < 15; i++) {
+                    numProx = numSeq + numAnt
+                    numAnt = numSeq
+                    numSeq = numProx
+                    elemento = numSeq
+                    numFiboArray.push(elemento) 
+                    numFibo++
+                    
+                }
+
+                /*while (numFibo < 16) {
                     numProx = numSeq + numAnt
                     numAnt = numSeq
                     numSeq = numProx
@@ -35,7 +45,7 @@
                     numFiboArray.push(elemento) 
                     numFibo++
                     //console.log(numSeq);
-                }
+                }*/
            
                 numFiboArray.unshift(1)
                 

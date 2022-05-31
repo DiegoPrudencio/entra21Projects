@@ -22,9 +22,14 @@
 
             function criar() {
                 
-                while (numDecrescente.length <= 9) { 
+                /*while (numDecrescente.length <= 9) { 
                     elemento = (elemento - 1)
                     numDecrescente.push(elemento)           
+                }*/
+
+                for (let i = 0; i < 10; i++) {
+                    numDecrescente.unshift(i)   
+                    
                 }
 
                 for (index = 0; index < numDecrescente.length; index++) {
