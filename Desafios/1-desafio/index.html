@@ -28,11 +28,20 @@
                 font-size: 16px;
                 border-radius: 8px;
                 width: 85px;
+                height: 7vh;
             }
 
             .button:hover {
                 background-color: lightblue;
                 color: #008CBA;
+            }
+
+            input {
+                border: 2px solid rgb(12, 31, 248);
+                height: 6vh;
+                width: 25vw;
+                background-color: white;
+                font-size: xx-large;
             }
 
             #legendTitulo {
@@ -47,6 +56,7 @@
             #idBtReset {
                 width: 175px;
             }
+
         </style>
 
     </head>
@@ -58,83 +68,85 @@
                             <br>
 
                         <div id="idDivTela">
-                            <input type="text" name="nmIpNumber" id="idNumber">
+                            <input type="text" name="nmIpNumber" id="inpIdNumber" value="0">
                             <output id="idResultado"  ></output> 
                         </div>
-                            <br><br>
-
-                        <div id="idDivSetimaL">
-                            <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC">
-                            <input type="button" class="button" name="nmBtMR" id="idBtMR" value="MR"> <!-- memory recall-->
-                            <input type="button" class="button" name="nmBtMC" id="idBtMC" value="MC"> <!-- memory clear-->
+                            <br>
+                        <div id="idDivPRimeiraL"> <!-- Primeira linha -->
+                            <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC" onclick="zerar()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtMR" id="idBtMR" value="MR"> <!-- memory recall-->
+                            <input type="button" class="button" class="btnOperador" name="nmBtMC" id="idBtMC" value="MC"> <!-- memory clear-->
                         </div>
 
-                        <div id="idDivSextaL">
+                        <div id="idDivSegundaL"> <!-- Segunda linha -->
                             <input type="button" class="button" name="nmBtM+" id="idBtM+" value="M+"> <!-- memory add-->
                             <input type="button" class="button" name="nmBtM-" id="idBtM-" value="M-"> <!-- memory subtract -->
                             <input type="button" class="button" name="nmBtMS" id="idBtMS" value="MS"> <!-- memory store-->
-                            <input type="button" class="button" name="nmBtPorcento" id="idBtPorcento" value="%">
-
+                            <input type="button" class="button" class="btnOperador" name="nmBtPorcento" id="idBtPorcento" value="%">
                         </div>
 
-                        <div id="idDivQuintaL">
+                        <div id="idDivTerceiraL"> <!-- Terceira linha -->
                             <input type="button" class="button" name="nmBtRaiz" id="idBtRaiz" value="√">
                             <input type="button" class="button" name="nmBtExpo" id="idBtExpo" value="x2">
                             <input type="button" class="button" name="nmBtInverso" id="idBtInverso" value="1/2">
-                            <input type="button" class="button" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
                         </div>
 
-                        <div id="idDivQuartaL">
-                            <input type="button" class="button" name="nmBtSete" id="idBtSete" value="7">
-                            <input type="button" class="button" name="nmBtOito" id="idBtOito" value="8">
-                            <input type="button" class="button" name="nmBtNove" id="idBtNove" value="9">
-                            <input type="button" class="button" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
+                        <div id="idDivQuartaL"> <!-- Quarta linha -->
+                            <input type="button" class="button" class="btnNumber" name="nmBtSete" id="idBtSete" value="7">
+                            <input type="button" class="button" class="btnNumber" name="nmBtOito" id="idBtOito" value="8">
+                            <input type="button" class="button" class="btnNumber" name="nmBtNove" id="idBtNove" value="9">
+                            <input type="button" class="button" class="btnOperador" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
                         </div>
 
-                        <div id="idDivTerceiraL">
-                            <input type="button" class="button" name="nmBtQuatro" id="idBtQuatro" value="4">
-                            <input type="button" class="button" name="nmBtCinco" id="idBtCinco" value="5">
-                            <input type="button" class="button" name="nmBtSeis" id="idBtSeis" value="6">
-                            <input type="button" class="button" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
+                        <div id="idDivQuintaL"> <!-- Quinta linha -->
+                            <input type="button" class="button" class="btnNumber" name="nmBtQuatro" id="idBtQuatro" value="4">
+                            <input type="button" class="button" class="btnNumber" name="nmBtCinco" id="idBtCinco" value="5">
+                            <input type="button" class="button" class="btnNumber" name="nmBtSeis" id="idBtSeis" value="6">
+                            <input type="button" class="button" class="btnOperador" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
                         </div>
 
-                        <div id="idDivSegundaL">
-                            <input type="button" class="button" name="nmBtUm" id="idBtUm" value="1">
-                            <input type="button" class="button" name="nmBtDois" id="idBtDois" value="2">
-                            <input type="button" class="button" name="nmBtTres" id="idBtTres" value="3">
-                            <input type="button" class="button" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
+                        <div id="idDivSextaL"> <!-- Sexta linha -->
+                            <input type="button" class="button" class="btnNumber" name="nmBtUm" id="idBtUm" value="1" onclick="um()"> 
+                            <input type="button" class="button" class="btnNumber" name="nmBtDois" id="idBtDois" value="2">
+                            <input type="button" class="button" class="btnNumber" name="nmBtTres" id="idBtTres" value="3">
+                            <input type="button" class="button" class="btnOperador" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
                         </div>
 
-                        <div id="idDivPrimeiraL">
-                            <input type="button" class="button" name="nmBtZero" id="idBtZero" value="0">
+                        <div id="idDivSetimaL">  <!-- Setima linha -->
+                            <input type="button" class="button" class="btnNumber" name="nmBtZero" id="idBtZero" value="0">
                             <input type="button" class="button" name="nmBtVirgula" id="idBtVirgula" value=",">
-                            <input type="button" class="button" name="nmBtIgual" id="idBtIgual" value="=">
-                        </div>
-                        
-
-
-
-
-                        
+                            <input type="button" class="button" name="nmBtIgual" id="idBtIgual" value="=" onclick="resultado()">
+                        </div>   
                 </fieldset>
-
-    
             </form>
             <script>
     
-                var num1
-                var num2 
-                var resultado
-    
+                var btn = document.querySelector(".btnNumber")
+                var input = document.querySelector("#inpIdNumber")
+                var operador = document.querySelector(".btnOperador")
+
+                function zerar() {
+
+                    if (zerar) {
+                        document.getElementById("inpIdNumber").value = ""
+                    }
+                }
+
+                function um() {
+
+                    if (um) {
+                        document.getElementById("inpIdNumber").value = "1"
+                    }
+                }
+                
                 function somarValores(){
                     
-                    num1 = Number(document.getElementById("idNum1").value)
-                    num2 = Number(document.getElementById("idNum2").value)
-                    resultado = num1 + num2
-                    document.getElementById("idResultado").value = resultado
+                    let soma = btn + btn
+                    input.value = soma
                 }
     
-                function subtrairValores(){
+                /*function subtrairValores(){
     
                     num1 = Number(document.getElementById("idNum1").value)
                     num2 = Number(document.getElementById("idNum2").value)
@@ -159,7 +171,7 @@
                     resultado = num1 / num2
                     document.getElementById("idResultado").value = resultado
     
-                }
+                }*/
             </script>
         </main>
     </body>
