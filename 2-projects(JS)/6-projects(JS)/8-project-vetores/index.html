@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <form action="">
+            <label for="idNum">Informe os números:</label>
+            <br><br>
+            <input type="text" name="nmNum" id="idNum">
+            <br><br>
+            <input type="button" name="nmBtVetores" id="idBtVetores" value="Enviar" onclick="criarLista()">
+            <input type="button" name="nmBtRelatorio" id="idBtRealatorio" value="Relatório" onclick="relatorio()">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <output id="idOut2"></output>
+        </form>
+
+        <script>
+
+            var numeros = []
+            var envios = 0
+            var out = document.getElementById("idOut")
+            var out2 = document.getElementById("idOut2")
+
+            function criarLista() {
+                
+                if (envios < 15) {
+                    let num = Number(document.getElementById("idNum").value)
+                        numeros.push(num)
+                        document.getElementById("idNum").value = ""
+                        console.log(numeros);
+                } else if (envios == 15) {
+                    document.getElementById("idNum").disabled = true
+                } 
+                    /*console.log(nomes[1])
+                    console.log(numsAleatorios[1])
+                    console.log(numsAleatorios)
+                    console.table(numsAleatorios)*/
+                    envios++
+            }
+
+            function relatorio() {
+
+                let numDiv = []
+
+                out.value = numeros
+                
+
+            for (let i = 0; i < numeros.length; i++) {
+                if (numeros[i] % 10 == 0) {
+                    numDiv.push(numeros.indexOf(i))
+                    console.log(numDiv);
+                    out2.value = "Os números nas posições " + numDiv + " são divisiveis por 10."
+                    }
+                }   
+            }
+        </script>
+    </body>
+</html>

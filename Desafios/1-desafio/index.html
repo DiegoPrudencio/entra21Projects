@@ -12,27 +12,43 @@
                 <fieldset id="calculadora">
                     <legend id="legendTitulo">Calculadora</legend>
                             <br>
-                        <input type="text" name="nmVisor" id="idVisor" required>
-                        <output id="idResultado"></output> 
+   
+                        <output id="idResultado"  ></output> 
 
-                        <input type="button" class="button" name="nmBtZero" id="idBtZero" value="0">
-                        <input type="button" class="button" name="nmBtUm" id="idBtUm" value="1">
-                        <input type="button" class="button" name="nmBtDois" id="idBtDois" value="2">
-                        <input type="button" class="button" name="nmBtTres" id="idBtTres" value="3">
-                        <input type="button" class="button" name="nmBtQuatro" id="idBtQuatro" value="4">
-                        <input type="button" class="button" name="nmBtCinco" id="idBtCinco" value="5">
-                        <input type="button" class="button" name="nmBtSeis" id="idBtSeis" value="6">
-                        <input type="button" class="button" name="nmBtSete" id="idBtSete" value="7">
-                        <input type="button" class="button" name="nmBtOito" id="idBtOito" value="8">
-                        <input type="button" class="button" name="nmBtNove" id="idBtNove" value="9">
+                        <div id="idDivQuintaL">
+                            <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC">
+                            <input type="button" class="button" name="nmBtRaiz" id="idBtRaiz" value="Raiz">
+                            <input type="button" class="button" name="nmBtPorcento" id="idBtPorcento" value="%">
+                            <input type="button" class="button" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
+                        </div>
 
-                        <input type="button" class="button" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
-                        <input type="button" class="button" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
-                        <input type="button" class="button" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
-                        <input type="button" class="button" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
+                        <div id="idDivQuartaL">
+                            <input type="button" class="button" name="nmBtSete" id="idBtSete" value="7">
+                            <input type="button" class="button" name="nmBtOito" id="idBtOito" value="8">
+                            <input type="button" class="button" name="nmBtNove" id="idBtNove" value="9">
+                            <input type="button" class="button" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
+                        </div>
 
+                        <div id="idDivTerceiraL">
+                            <input type="button" class="button" name="nmBtQuatro" id="idBtQuatro" value="4">
+                            <input type="button" class="button" name="nmBtCinco" id="idBtCinco" value="5">
+                            <input type="button" class="button" name="nmBtSeis" id="idBtSeis" value="6">
+                            <input type="button" class="button" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
+                        </div>
 
-    
+                        <div id="idDivSegundaL">
+                            <input type="button" class="button" name="nmBtUm" id="idBtUm" value="1">
+                            <input type="button" class="button" name="nmBtDois" id="idBtDois" value="2">
+                            <input type="button" class="button" name="nmBtTres" id="idBtTres" value="3">
+                            <input type="button" class="button" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
+                        </div>
+
+                        <div id="idDivPrimeiraL">
+                            <input type="button" class="button" name="nmBtZero" id="idBtZero" value="0">
+                            <input type="button" class="button" name="nmBtVirgula" id="idBtVirgula" value=",">
+                            <input type="button" class="button" name="nmBtIgual" id="idBtIgual" value="=">
+                        </div>
+
                 </fieldset>
 
     
