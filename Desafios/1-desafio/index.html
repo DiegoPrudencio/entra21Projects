@@ -5,6 +5,50 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculadora</title>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+                background-color: aliceblue;
+                text-align: center;
+            }
+
+            .button {
+                color: white;
+                background-color: #008CBA;
+                margin: 1px;
+                padding: 15px 30px;
+                border: 1.5px solid rgb(3, 3, 5);
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 8px;
+                width: 85px;
+            }
+
+            .button:hover {
+                background-color: lightblue;
+                color: #008CBA;
+            }
+
+            #legendTitulo {
+                font-style: italic;
+                font-size: xx-large;
+            }
+
+            #idBtIgual {
+                width: 175px;
+            }
+
+            #idBtReset {
+                width: 175px;
+            }
+        </style>
+
     </head>
     <body>
         <main>
@@ -12,13 +56,31 @@
                 <fieldset id="calculadora">
                     <legend id="legendTitulo">Calculadora</legend>
                             <br>
-   
-                        <output id="idResultado"  ></output> 
+
+                        <div id="idDivTela">
+                            <input type="text" name="nmIpNumber" id="idNumber">
+                            <output id="idResultado"  ></output> 
+                        </div>
+                            <br><br>
+
+                        <div id="idDivSetimaL">
+                            <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC">
+                            <input type="button" class="button" name="nmBtMR" id="idBtMR" value="MR"> <!-- memory recall-->
+                            <input type="button" class="button" name="nmBtMC" id="idBtMC" value="MC"> <!-- memory clear-->
+                        </div>
+
+                        <div id="idDivSextaL">
+                            <input type="button" class="button" name="nmBtM+" id="idBtM+" value="M+"> <!-- memory add-->
+                            <input type="button" class="button" name="nmBtM-" id="idBtM-" value="M-"> <!-- memory subtract -->
+                            <input type="button" class="button" name="nmBtMS" id="idBtMS" value="MS"> <!-- memory store-->
+                            <input type="button" class="button" name="nmBtPorcento" id="idBtPorcento" value="%">
+
+                        </div>
 
                         <div id="idDivQuintaL">
-                            <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC">
-                            <input type="button" class="button" name="nmBtRaiz" id="idBtRaiz" value="Raiz">
-                            <input type="button" class="button" name="nmBtPorcento" id="idBtPorcento" value="%">
+                            <input type="button" class="button" name="nmBtRaiz" id="idBtRaiz" value="√">
+                            <input type="button" class="button" name="nmBtExpo" id="idBtExpo" value="x2">
+                            <input type="button" class="button" name="nmBtInverso" id="idBtInverso" value="1/2">
                             <input type="button" class="button" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
                         </div>
 
@@ -48,7 +110,12 @@
                             <input type="button" class="button" name="nmBtVirgula" id="idBtVirgula" value=",">
                             <input type="button" class="button" name="nmBtIgual" id="idBtIgual" value="=">
                         </div>
+                        
 
+
+
+
+                        
                 </fieldset>
 
     
