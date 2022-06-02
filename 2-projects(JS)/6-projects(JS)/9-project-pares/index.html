@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números</title>
+    </head>
+    <body>
+        <form action="">
+            <label for="idNum">Informe os números inteiros:</label>
+            <br><br>
+            <input type="text" name="nmNum" id="idNum">
+            <br><br>
+            <input type="button" name="nmBtVetores" id="idBtVetores" value="Enviar" onclick="criarLista()">
+            <input type="button" name="nmBtRelatorio" id="idBtRealatorio" value="Relatório" onclick="relatorio()">
+            <br><br>
+            <output id="idOut"></output>
+            <br><br>
+            <output id="idOut2"></output>
+        </form>
+
+        <script>
+
+            var numeros = []
+            var envios = 0
+            var out = document.getElementById("idOut")
+            var out2 = document.getElementById("idOut2")
+
+            function criarLista() {
+                
+                if (envios < 10) {
+                    let num = Number(document.getElementById("idNum").value)
+                        numeros.push(num)
+                        document.getElementById("idNum").value = ""
+                        console.log(numeros);
+                } else if (envios == 10) {
+                    document.getElementById("idNum").disabled = true
+                } 
+                    envios++
+            }
+
+            out.value = numeros
+
+            function relatorio() {
+
+                let numPares = []
+
+            for (let i = 0; i < numeros.length; i++) {
+                if (numeros[i] % 2 == 0) {
+                    numPares.push(numeros[i])                    
+                    console.log(numPares); //não consegui achar as posições dos índices, apenas quis elementos são pares.
+                    out2.value = "Os números " + numPares + " são pares e estão nas posições " + " , respectivamentes."
+                    }
+                }   
+            }
+        </script>
+    </body>
+</html>
