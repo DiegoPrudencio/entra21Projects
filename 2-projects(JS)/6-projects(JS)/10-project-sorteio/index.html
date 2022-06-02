@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+
+            <input type="button" value="Gerar numero randomico" onclick="gerarNum()">
+                <br><br>
+            <input type="text" name="nmNumber" id="idNumber">
+                <br><br>
+            <input type="button" value="Enviar Número" onclick="enviar()">
+                <br><br>
+            <output id="idOutNumA"></output>
+                <br><br>
+            <output id="idOutNumB">Números acima de cinco:</output>
+                <br><br>
+            <output id="idOutNumC">Números divisiveis por 3:</output>
+
+            </form>
+            
+            <script>
+
+                var numRandomico = []
+
+                function gerarNum() {
+                   /* var outA = document.querySelector("#idOutNumA")
+                    var outB = document.querySelector("#idOutNumB")
+                    var outC = document.querySelector("#idOutNumC")
+                    var sorteados = ""
+                    var divisivel3 = 0
+                    var acima5 = 0*/
+
+                    for (let i = 0; i < 30; i++) {
+                        numRandomico[i] = parseInt(Math.random() * 16)
+                        console.log(numRandomico)
+                        //console.log(numRandomico.length)
+                    }  
+                }
+
+                function enviar() {
+
+                    let numIguais = []
+
+                    var OutNumA = document.getElementById("idOutNumA")
+
+                    function input(number) {
+                        return number = Number(document.getElementById("idNumber").value)
+                    }
+
+                    for (let i = 0; i < numRandomico.length; i++) {
+                        if (numRandomico[i] == numRandomico.findIndex(input)) {
+                            numIguais.push(numRandomico.findIndex(input))                    
+                            //console.log(numPares); //não consegui achar as posições dos índices, apenas quis elementos são pares.
+                           // out2.value = "Os números " + numPares + " são pares e estão nas posições " + " , respectivamentes."
+                        }
+                    }  console.log(numIguais);
+                    
+                    OutNumA.value = "Seu número foi encontrado nas posições: " + numRandomico.findIndex(input)
+                }
+
+            </script>
+        </main>
+    </body>
+</html>
