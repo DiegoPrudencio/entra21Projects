@@ -63,9 +63,11 @@
             function relatorio() {
               
                 let soma = 0
+                let acimaMedia = 0
+                let maiorNota
 
-                for (let i = 0; i < notas.length; i++) {
-                    soma += notas[i]
+                for (let a = 0; a < notas.length; a++) {
+                    soma += notas[a]
                 }
                 media = soma/notas.length
 
@@ -73,6 +75,27 @@
                     console.log(media)
                
                 out1.value = "A média da turma é: " + media
+
+                for (let b = 0; b < notas.length; b++) {
+                    if (notas[b] > media) {
+                        acimaMedia++                       
+                    }
+                    
+                } 
+                    console.log(acimaMedia);
+                
+                out2.value = "O número de alunos acima da média da turma é igual a " + acimaMedia
+
+                for (let c = 0; c < notas.length; c++) {
+                    if (notas[c] > 0) {
+                        maiorNota = notas[c] 
+                        continue    
+                    }
+                    
+                } 
+                    //console.log(maiorNota);
+                
+                out3.value = "A maior nota foi " + maiorNota
             }   
 
             
