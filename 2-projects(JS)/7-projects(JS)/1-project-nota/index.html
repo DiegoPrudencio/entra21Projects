@@ -41,6 +41,7 @@
                 var nomes = []
                 var notas = []
                 var media
+                var maiorNota
                 var out1 = document.getElementById("idOut1")
                 var out2 = document.querySelector("#idOut2")
                 var out3 = document.querySelector("#idOut3")
@@ -64,7 +65,7 @@
               
                 let soma = 0
                 let acimaMedia = 0
-                let maiorNota
+                
 
                 for (let a = 0; a < notas.length; a++) {
                     soma += notas[a]
@@ -84,10 +85,7 @@
 
                 maiorNota = Math.max(...notas);
                 
-                    function posicao(lugar) {
-                        let lugar = maiorNota
-                        return lugar
-                    } 
+
 
                 notas.findIndex(posicao) // NÃO CONSEGUI
 
@@ -101,6 +99,9 @@
                     out4.value = "A maior nota está na posição " + notas.findIndex(posicao)
             }   
 
+            function posicao(lugar) {
+                        return lugar = maiorNota
+                    } 
             
 
 
