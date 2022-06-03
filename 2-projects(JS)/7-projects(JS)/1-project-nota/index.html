@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <form action="">
+            <fieldset>
+                <legend>Notas</legend>
+                    <br>
+                <label for="idNome">Inserir nome do Aluno</label>
+                    <br>
+                <input type="text" name="nmNome" id="idNome">
+                    <br><br>
+                <label for="idNota">Inserir nota do Aluno</label>
+                    <br>
+                <input type="text" name="nmNota" id="idNota">
+                    <br><br>
+                <input type="button" name="nmBtEnviar" id="idBtEnviar" value="Enviar" onclick="enviar()">
+                <input type="button" name="nmBtRelatorio" id="idBtRelatorio" value="Relatório" onclick="relatorio()">
+                    <br><br>
+                <output id="idOut1"></output>
+                    <br><br>
+                <output id="idOut2"></output>
+                    <br><br>
+                <output id="idOut3"></output>
+                    <br><br>
+                <output id="idOut4"></output>
+
+            </fieldset>
+        </form>
+
+        <script>
+
+                var nomes = []
+                var notas = []
+                var media
+                var out1 = document.getElementById("idOut1")
+                var out2 = document.querySelector("#idOut2")
+                var out3 = document.querySelector("#idOut3")
+                var Out4 = document.querySelector("#idOut4")
+
+            function enviar() {
+
+                let nome = document.getElementById("idNome").value
+                nomes.push(nome)
+                document.getElementById("idNome").value = ""
+                console.log(nomes)
+
+                let nota = Number(document.getElementById("idNota").value)
+                notas.push(nota)
+                document.getElementById("idNota").value = ""
+                console.log(notas)
+                //console.log(notas.length);
+            }
+
+            function relatorio() {
+              
+                let soma = 0
+
+                for (let i = 0; i < notas.length; i++) {
+                    soma += notas[i]
+                }
+                media = soma/notas.length
+
+                    console.log(soma);
+                    console.log(media)
+               
+                out1.value = "A média da turma é: " + media
+            }   
+
+            
+
+
+
+        </script>
+
+    </body>
+
+</html>

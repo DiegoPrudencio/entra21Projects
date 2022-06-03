@@ -17,11 +17,6 @@
             <input type="button" value="Enviar Número" onclick="enviar()">
                 <br><br>
             <output id="idOutNumA"></output>
-                <br><br>
-            <output id="idOutNumB">Números acima de cinco:</output>
-                <br><br>
-            <output id="idOutNumC">Números divisiveis por 3:</output>
-
             </form>
             
             <script>
@@ -51,15 +46,17 @@
 
                     function input(number) {
                         return number = Number(document.getElementById("idNumber").value)
+                        console.log(number);
                     }
 
-                    for (let i = 0; i < numRandomico.length; i++) {
+
+                    /*for (let i = 0; i < numRandomico.length; i++) {
                         if (numRandomico[i] == numRandomico.findIndex(input)) {
                             numIguais.push(numRandomico.findIndex(input))                    
-                            //console.log(numPares); //não consegui achar as posições dos índices, apenas quis elementos são pares.
-                           // out2.value = "Os números " + numPares + " são pares e estão nas posições " + " , respectivamentes."
+                            console.log(numRandomico.findIndex(input)); //não consegui achar as posições dos índices, apenas quis elementos são pares.
+                           out2.value = "Os números " + numPares + " são pares e estão nas posições " + " , respectivamentes."
                         }
-                    }  console.log(numIguais);
+                    }  console.log(numIguais);*/
                     
                     OutNumA.value = "Seu número foi encontrado nas posições: " + numRandomico.findIndex(input)
                 }
