@@ -44,7 +44,7 @@
                 var out1 = document.getElementById("idOut1")
                 var out2 = document.querySelector("#idOut2")
                 var out3 = document.querySelector("#idOut3")
-                var Out4 = document.querySelector("#idOut4")
+                var out4 = document.querySelector("#idOut4")
 
             function enviar() {
 
@@ -71,10 +71,8 @@
                 }
                 media = soma/notas.length
 
-                    console.log(soma);
-                    console.log(media)
-               
-                out1.value = "A média da turma é: " + media
+                //console.log(soma);
+                //console.log(media)
 
                 for (let b = 0; b < notas.length; b++) {
                     if (notas[b] > media) {
@@ -82,20 +80,25 @@
                     }
                     
                 } 
-                    console.log(acimaMedia);
-                
-                out2.value = "O número de alunos acima da média da turma é igual a " + acimaMedia
+                //console.log(acimaMedia);
 
-                for (let c = 0; c < notas.length; c++) {
-                    if (notas[c] > 0) {
-                        maiorNota = notas[c] 
-                        continue    
-                    }
-                    
-                } 
-                    //console.log(maiorNota);
+                maiorNota = Math.max(...notas);
                 
-                out3.value = "A maior nota foi " + maiorNota
+                    function posicao(lugar) {
+                        let lugar = maiorNota
+                        return lugar
+                    } 
+
+                notas.findIndex(posicao) // NÃO CONSEGUI
+
+                //console.log(lugar)
+
+                //console.log(notas.findIndex(posicao)) 
+                
+                    out1.value = "A média da turma é: " + media
+                    out2.value = "O número de alunos acima da média da turma é igual a " + acimaMedia
+                    out3.value = "A maior nota foi " + maiorNota
+                    out4.value = "A maior nota está na posição " + notas.findIndex(posicao)
             }   
 
             
