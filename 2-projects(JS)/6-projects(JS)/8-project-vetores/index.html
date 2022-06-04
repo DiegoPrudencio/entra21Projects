@@ -44,14 +44,16 @@
 
                 let numDiv = []
 
-                out.value = numeros
+                out.value = numeros + " , "
                 
 
             for (let i = 0; i < numeros.length; i++) {
                 if (numeros[i] % 10 == 0) {
-                    numDiv.push(numeros[i])                    
+                    out2.value = "Os números nas posições " + i + " são divisiveis por 10."
+
+                    /*numDiv.push(numeros[i])                    
                     console.log(numDiv); //não consegui achar as posições dos índices, apenas quis elementos são divisivis.
-                    out2.value = "Os números nas posições " + numDiv + " são divisiveis por 10."
+                    out2.value = "Os números nas posições " + numDiv + " são divisiveis por 10."*/
                     }
                 }   
             }
