@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <form action="">
+            <fieldset>
+                <legend>Notas</legend>
+                    <br>
+                <label for="idNome">Inserir o nome do funcionário</label>
+                    <br>
+                <input type="text" name="nmNome" id="idNome" required>
+                    <br><br>
+                <label for="idSexo">Qual seu sexo de nascimento?</label>
+                    <br><br>
+                <input type="radio" name="nmSexo" id="idMasc">
+                <label for="idSexo">Masculino</label>
+                <input type="radio" name="nmSexo" id="idFem"checked>
+                <label for="idSexo">Feminino</label>
+                    <br><br>
+                <label for="idSalario">Inserir a salário</label>
+                    <br>
+                <input type="text" name="nmSalario" id="idSalario" required>
+                    <br><br>
+                <input type="button" name="nmBtEnviar" id="idBtEnviar" value="Enviar" onclick="enviar()">
+                <input type="button" name="nmBtRelatorio" id="idBtRelatorio" value="Relatório" onclick="relatorio()">
+                    <br><br>
+                <output id="idOut1"></output>
+                    <br><br>
+                <output id="idOut2"></output>
+                    <br><br>
+                <output id="idOut3"></output>
+                    <br><br>
+                <output id="idOut4"></output>
+
+            </fieldset>
+        </form>
+
+        <script>
+
+                var nomes = []
+                var masc = document.getElementById("idMasc").checked
+                var fem = document.getElementById("idFem").checked
+                var mOuF
+                var sexo = []
+                var salario = []
+
+                var out1 = document.getElementById("idOut1")
+                var out2 = document.querySelector("#idOut2")
+                var out3 = document.querySelector("#idOut3")
+                var out4 = document.querySelector("#idOut4")
+
+            function enviar() {
+
+                let nome = document.getElementById("idNome").value
+                nomes.push(nome)
+                document.getElementById("idNome").value = ""
+                console.log(nomes)
+
+                if (masc == true) {
+                    let masc = "Masc"
+                    sexo.push(masc)
+                }
+                if (fem == true) {
+                    let fem = "Fem"
+                    sexo.push(fem)
+                }
+                console.log(sexo)
+
+                let valor = Number(document.getElementById("idSalario").value)
+                salario.push(valor)
+                document.getElementById("idSalario").value = ""
+                console.log(salario)
+                
+            }
+
+            /*var menor18Index = idades.filter(buscarMaior18Index)
+
+            function buscarMaior18Index(value, index, array) {
+                value < 18
+                return index
+            }  
+            console.log(menor18Index);
+            
+            function relatorio() {
+              
+                let menor18 = idades.filter(buscarMaior18)
+                let buscarNomesA = nomes.filter(buscarNomes)
+
+
+                
+                out2.value = buscarNomesA + "As idades menores que 18 são, respectivamente: " + menor18
+
+                /*for (let a = 0; a < notas.length; a++) {
+                    soma += notas[a]
+                }
+                media = soma/notas.length
+
+                //console.log(soma);
+                //console.log(media)
+
+                for (let b = 0; b < notas.length; b++) {
+                    if (notas[b] > media) {
+                        acimaMedia++                       
+                    }
+                    
+                } 
+                //console.log(acimaMedia);
+
+                maiorNota = Math.max(...notas);
+                
+                let posicaoMaiorNota = notas.map(function(value, index, array) {
+                    if (value == maiorNota) {
+                        return index
+                    }
+                })
+                
+
+                    out2.value = "O número de alunos acima da média da turma é igual a " + acimaMedia
+                    out3.value = "A maior nota foi " + maiorNota
+                    out4.value = "A maior nota está na posição " + posicaoMaiorNota + " " */
+            /*} 
+
+
+        function buscarMaior18(value, index, array) {
+            return value < 18
+        }
+
+        function buscarNomes(value, index, array) {
+            index == menor18Index
+            return value
+        }  */
+
+
+            
+        
+
+
+        </script>
+
+    </body>
+
+</html>
