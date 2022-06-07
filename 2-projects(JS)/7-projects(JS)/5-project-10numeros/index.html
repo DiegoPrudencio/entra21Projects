@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <form action="">
+            <fieldset>
+                <legend>Números</legend>
+                    <br>
+                <label for="idNumeros">Inserir 10 números aleatórios</label>
+                    <br>
+                <input type="text" name="nmNumeros" id="idNumeros" required>
+                    <br><br>
+                <label for="idSexo">O que você deseja?</label>
+                    <br><br>
+                <!--<input type="radio" name="nmOrdenar" id="idCrescente">
+                <label for="idSexo">Ordenar em ordem crescente</label>
+                <input type="radio" name="nmOrdenar" id="idDecrescente"checked>
+                <label for="idSexo">Ordenar em ordem decrescente</label> -->
+
+                <select name="nmOrdenar" id="idOrdenar">
+                    <option value="crescente">Números Crescentes</option>
+                    <option value="decrescente">Números decrescentes</option>
+
+                    <br><br>
+                    <br><br>
+                <input type="button" name="nmBtEnviar" id="idBtEnviar" value="Enviar Número" onclick="enviar()">
+                <input type="button" name="nmBtOrdenar" id="idBtOrdenar" value="Ordenar" onclick="ordenar()">
+                    <br><br>
+                <output id="idOut1"></output>
+
+            </fieldset>
+        </form>
+
+        <script>
+
+            var numeros = []
+            var ordem = document.querySelector("#idOrdenar").value
+                //var decrescente = document.querySelector("#idDecrescente").checked
+            var numero
+            var out1 = document.getElementById("idOut1")
+
+
+            function enviar() {
+
+                numero = document.getElementById("idNumeros").value
+                numeros.push(numero)
+                document.getElementById("idNumeros").value = ""
+                console.log(numeros)
+            }
+
+            function ordenar() {
+                
+                if (ordem == "crescente") {
+                    numeros.sort((a,b) => a - b)
+                }
+                if (ordem == "decrescente") {
+                    numeros.sort((a,b) => b - a)
+                }
+                console.log(numeros)
+            }
+            
+        </script>
+
+    </body>
+
+</html>
