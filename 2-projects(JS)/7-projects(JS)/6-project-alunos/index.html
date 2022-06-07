@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+    </head>
+
+    <body>
+
+        <form action="">
+            <fieldset>
+                <div>
+                    <legend>Cadastro do Aluno</legend>
+                        <br>
+                    <label for="idNomeAluno">Nome do Aluno:</label>
+                    <input type="text" name="nmNomeAluno" id="idNomeAluno">
+                        <br><br>
+                    <label for="idEndereco">Endereço:</label>
+                    <input type="text" name="nmEndereco" id="idEndereco">
+                        <br><br>
+                    <label for="idNomeMae">Nome da mãe:</label>
+                    <input type="text" name="nmNomeMae" id="idNomeMae">
+                        <br><br>
+                    <label for="idNomePai">Nome do pai:</label>
+                    <input type="text" name="nmNomePai" id="idNomePai">
+                        <br><br>
+                    <label for="idNumTel">Telefone do responsável:</label>
+                    <input type="text" name="nmNumTel" id="idNumTel">
+                        <br><br>
+                </div>
+                <div>
+                    <input type="button" name="nmBtCadastrarAluno" id="idBtCadastrarAluno" value="Cadastrar Aluno" onclick="cadastrarAluno()">
+                </div>
+            </fieldset>
+        </form>
+            <br>
+        <form action="">
+            <fieldset>
+                <div>
+                    <legend>Notas:</legend>
+                            <br>
+                        <label for="idNotaP1">P1:</label>
+                        <input type="text" name="nmNotaP1" id="idNotaP1">
+                            <br><br>
+                        <label for="idNotaP2">P2:</label>
+                        <input type="text" name="nmNotaP2" id="idNotaP2">
+                            <br><br>
+                        <label for="idNotaP3">P3:</label>
+                        <input type="text" name="nmNotaP3" id="idNotaP3">
+                            <br><br>
+                        <label for="idNotaP4">P4:</label>
+                        <input type="text" name="nmNotaP4" id="idNotaP4">
+                </div>
+                <div>
+                    <input type="button" name="nmBtCadastrarNota" id="idBtCadastrarNota" value="Cadastrar Notas" onclick="cadastrarNota()">
+                </div>
+            </fieldset>
+        </form>
+            <br>
+        <form action="">
+            <fieldset>
+                <div>
+                    <label for="idBuscarAluno">Buscar cadastro do Aluno:</label>
+                    <input type="text" name="nmBuscarAluno" id="idBuscarAluno">
+                        <br><br>
+                    <input type="button" name="nmBtBuscarAluno" id="idBtBuscarAluno" value="Buscar Aluno" onclick="buscarAluno()">
+                        <br><br>
+                    <output id="idOut1"></output>
+                </div>
+            </fieldset>
+        </form>
+
+        <script>
+
+            var nomeAlunos = []
+            var enderecos = []
+            var nomeMaes = []
+            var nomePais = []
+            var numTels = []
+
+            var nome = document.getElementById("idBuscarAluno").value
+
+            var notasP1 = []
+            var notasP2 = []
+            var notasP3 = []
+            var notasP4 = []
+
+            var out1 = document.getElementById("idOut1")
+
+            function cadastrarAluno() {
+
+                let nomeAluno = document.getElementById("idNomeAluno").value
+                nomeAlunos.push(nomeAluno)
+                document.getElementById("idNomeAluno").value = ""
+                console.log(nomeAlunos)
+
+                let endereco = document.getElementById("idEndereco").value
+                enderecos.push(endereco)
+                document.getElementById("idEndereco").value = ""
+                console.log(enderecos)
+
+                let nomeMae = document.getElementById("idNomeMae").value
+                nomeMaes.push(nomeMae)
+                document.getElementById("idNomeMae").value = ""
+                console.log(nomeMaes)
+
+                let nomePai = document.getElementById("idNomePai").value
+                nomePais.push(nomePai)
+                document.getElementById("idNomePai").value = ""
+                console.log(nomePais)
+                
+                let numTel = document.getElementById("idNumTel").value
+                numTels.push(numTel)
+                document.getElementById("idNumTel").value = ""
+                console.log(numTels)
+            }
+
+            function cadastrarNota() {
+                
+                let notaP1 = document.getElementById("idNotaP1").value
+                notasP1.push(notaP1)
+                document.getElementById("idNotaP1").value = ""
+                console.log(notasP1)
+
+                let notaP2 = document.getElementById("idNotaP2").value
+                notasP2.push(notaP2)
+                document.getElementById("idNotaP2").value = ""
+                console.log(notasP2)
+
+                let notaP3 = document.getElementById("idNotaP3").value
+                notasP3.push(notaP3)
+                document.getElementById("idNotaP3").value = ""
+                console.log(notasP3)
+
+                let notaP4 = document.getElementById("idNotaP4").value
+                notasP4.push(notaP4)
+                document.getElementById("idNotaP4").value = ""
+                console.log(notasP4)
+            }
+
+            function buscarAluno() {
+                
+                let buscarNome = nomeAlunos.filter(buscarNomeA)
+                console.log(buscarNome);
+
+            }
+
+            function buscarNomeA(value, index, array) {
+                if (value = nome) {
+                    return index
+                }
+                //console.log(buscarNomeA());
+            }
+
+        </script>
+
+    </body>
+
+</html>
