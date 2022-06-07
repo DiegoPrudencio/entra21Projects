@@ -67,7 +67,7 @@
                     <legend id="legendTitulo">Calculadora</legend>
                             <br>
 
-                        <div id="idDivTela">
+                        <div id="idDivTela"> <!-- Tela de recebimento e escrita -->
                             <input type="text" name="nmIpNumber" id="inpIdNumber" value="">
                             <output id="idResultado"  ></output> 
                         </div>
@@ -107,7 +107,7 @@
                         </div>
 
                         <div id="idDivSextaL"> <!-- Sexta linha -->
-                            <input type="button" class="button" class="btnNumber" name="nmBtUm" id="idBtUm" value="1" onclick="inserir('1')"> 
+                            <input type="button" class="button" class="btnNumber" name="nmBtUm" id="idBtUm" value="1" onclick="inserir('1')"> <!-- função gerada para puxar o valor -->
                             <input type="button" class="button" class="btnNumber" name="nmBtDois" id="idBtDois" value="2" onclick="inserir('2')">
                             <input type="button" class="button" class="btnNumber" name="nmBtTres" id="idBtTres" value="3" onclick="inserir('3')">
                             <input type="button" class="button" class="btnOperador" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
@@ -133,9 +133,9 @@
                     }
                 }
 
-                function inserir(num) {
-                    let numero = document.getElementById("inpIdNumber").value 
-                    document.getElementById("inpIdNumber").value = numero + num
+                function inserir(num) { 
+                    let numero = document.getElementById("inpIdNumber").value //dessa forma consiguimos pegar o número que já está
+                    document.getElementById("inpIdNumber").value = numero + num //na tela e adicionar um novo com o botão.
                 }
                 
                 function somarValores(){
