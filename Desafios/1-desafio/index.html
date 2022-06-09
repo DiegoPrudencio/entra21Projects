@@ -74,13 +74,13 @@
                             <br>
                         <div id="idDivPRimeiraL"> <!-- Primeira linha -->
                             <input type="button" class="button" name="nmBtReset" id="idBtReset" value="AC" onclick="zerar()">
-                            <input type="button" class="button" class="btnOperador" name="nmBtMR" id="idBtMR" value="MR"> <!-- memory recall-->
-                            <input type="button" class="button" class="btnOperador" name="nmBtMC" id="idBtMC" value="MC"> <!-- memory clear-->
+                            <input type="button" class="button" class="btnOperador" name="nmBtMR" id="idBtMR" value="MR" onclick="mr()"> <!-- memory recall-->
+                            <input type="button" class="button" class="btnOperador" name="nmBtMC" id="idBtMC" value="MC" onclick="mc()"> <!-- memory clear-->
                         </div>
 
                         <div id="idDivSegundaL"> <!-- Segunda linha -->
-                            <input type="button" class="button" name="nmBtM+" id="idBtM+" value="M+"> <!-- memory add-->
-                            <input type="button" class="button" name="nmBtM-" id="idBtM-" value="M-"> <!-- memory subtract -->
+                            <input type="button" class="button" name="nmBtM+" id="idBtM+" value="M+" onclick="mPlus()"> <!-- memory add-->
+                            <input type="button" class="button" name="nmBtM-" id="idBtM-" value="M-" onclick="mMinus()"> <!-- memory subtract -->
                             <input type="button" class="button" name="nmBtMS" id="idBtMS" value="MS"> <!-- memory store-->
                             <input type="button" class="button" class="btnOperador" name="nmBtPorcento" id="idBtPorcento" value="%" onclick="porcentagem()">
                         </div>
@@ -122,9 +122,10 @@
             </form>
             <script>
     /* */
-                var btn = document.querySelector(".btnNumber")
                 var input = document.querySelector("#inpIdNumber")
-                var operador = document.querySelector(".btnOperador")
+                var memoryRegister = 0
+                var mPlusNumber = 0
+                var mMinusNumber = 0
 
                 function zerar() {
 
@@ -139,21 +140,56 @@
                     //document.getElementById("inpIdNumber").value = numero + num
                     input.value = input.value + num
                 }
-
+                
+                /* Função para raiz quadrada*/
                 function raiz() {
                     input.value = (input.value ** (1/2))
                 }
 
+                /* Função para exponenciação*/
                 function expo() {
                     input.value = (input.value * input.value)
                 }
 
+                /* Função para porcentagem*/
                 function porcentagem() {
                     input.value = (input.value / 100)
                 }
 
+                /* Função para inverso (1/x)*/
                 function inverso() {
                     input.value = (1 / input.value)
+                }
+
+                /* Função para memory add*/
+                function mPlus() {
+                    //memoryRegister = Number(input.value)
+                    mPlusNumber = (memoryRegister + Number(input.value))
+                    console.log(mPlusNumber);
+                }
+
+                /* Função para memory subtract*/
+                function mMinus() {
+                    mMinusNumber = (memoryRegister - Number(input.value))
+                }
+
+                /* Função para memory register*/
+                function mr() {
+                    memoryRegister = (mPlusNumber + mMinusNumber)
+                }
+
+                /* Função para memory clear*/
+                function mc() {
+                    if (mPlusNumber != 0) {
+                        mPlusNumber = 0
+                    }
+                    if (mMinusNumber != 0) {
+                        mMinusNumber = 0
+                    }
+                    if (memoryRegister != 0) {
+                        memoryRegister = 0
+                    }
+                    console.log(mPlusNumber);
                 }
 
                 /* Função para realizar a conta com base nos números e sinais capturados na tela*/
