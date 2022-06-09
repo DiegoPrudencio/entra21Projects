@@ -50,8 +50,7 @@
 
             function enviar() {
 
-                numero = document.getElementById("idNumeros").value
-                numeros.push(numero)
+                numeros.push(Number(document.getElementById("idNumeros").value))
                 document.getElementById("idNumeros").value = ""
                 console.log(numeros)
             }
@@ -62,7 +61,7 @@
                     numeros.sort((a,b) => a - b)
                 }
                 if (ordem == "decrescente") {
-                    numeros.sort((a,b) => b - a)
+                    numeros.reverse(numeros.sort((a,b) => a - b)) //sort((a,b) => b - a)
                 }
                 console.log(numeros)
             }

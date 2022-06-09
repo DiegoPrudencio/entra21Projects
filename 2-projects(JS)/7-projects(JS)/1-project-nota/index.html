@@ -90,6 +90,10 @@
                         return index
                     }
                 })
+
+                posicaoMaiorNota = posicaoMaiorNota.filter(function(value,index, array) {
+                    return value != undefined
+                })
                 
                     out1.value = "A média da turma é: " + media
                     out2.value = "O número de alunos acima da média da turma é igual a " + acimaMedia
