@@ -82,40 +82,40 @@
                             <input type="button" class="button" name="nmBtM+" id="idBtM+" value="M+"> <!-- memory add-->
                             <input type="button" class="button" name="nmBtM-" id="idBtM-" value="M-"> <!-- memory subtract -->
                             <input type="button" class="button" name="nmBtMS" id="idBtMS" value="MS"> <!-- memory store-->
-                            <input type="button" class="button" class="btnOperador" name="nmBtPorcento" id="idBtPorcento" value="%">
+                            <input type="button" class="button" class="btnOperador" name="nmBtPorcento" id="idBtPorcento" value="%" onclick="inserir('%')">
                         </div>
 
                         <div id="idDivTerceiraL"> <!-- Terceira linha -->
                             <input type="button" class="button" name="nmBtRaiz" id="idBtRaiz" value="√">
                             <input type="button" class="button" name="nmBtExpo" id="idBtExpo" value="x2">
                             <input type="button" class="button" name="nmBtInverso" id="idBtInverso" value="1/2">
-                            <input type="button" class="button" class="btnOperador" name="nmBtDividir" id="idBrDividir" value="/" onclick="dividirValores()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtDividir" id="idBrDividir" value="/" onclick="inserir('/')">
                         </div>
 
                         <div id="idDivQuartaL"> <!-- Quarta linha -->
                             <input type="button" class="button" class="btnNumber" name="nmBtSete" id="idBtSete" value="7" onclick="inserir('7')">
                             <input type="button" class="button" class="btnNumber" name="nmBtOito" id="idBtOito" value="8" onclick="inserir('8')">
                             <input type="button" class="button" class="btnNumber" name="nmBtNove" id="idBtNove" value="9" onclick="inserir('9')">
-                            <input type="button" class="button" class="btnOperador" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="multiplicarValores()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtMultiplicar" id="idBtMultiplicar" value="*" onclick="inserir('*')">
                         </div>
 
                         <div id="idDivQuintaL"> <!-- Quinta linha -->
                             <input type="button" class="button" class="btnNumber" name="nmBtQuatro" id="idBtQuatro" value="4" onclick="inserir('4')">
                             <input type="button" class="button" class="btnNumber" name="nmBtCinco" id="idBtCinco" value="5" onclick="inserir('5')">
                             <input type="button" class="button" class="btnNumber" name="nmBtSeis" id="idBtSeis" value="6" onclick="inserir('6')">
-                            <input type="button" class="button" class="btnOperador" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="subtrairValores()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtSubtrair" id="idBtSubtrair" value="-" onclick="inserir('-')">
                         </div>
 
                         <div id="idDivSextaL"> <!-- Sexta linha -->
                             <input type="button" class="button" class="btnNumber" name="nmBtUm" id="idBtUm" value="1" onclick="inserir('1')"> <!-- função gerada para puxar o valor -->
                             <input type="button" class="button" class="btnNumber" name="nmBtDois" id="idBtDois" value="2" onclick="inserir('2')">
                             <input type="button" class="button" class="btnNumber" name="nmBtTres" id="idBtTres" value="3" onclick="inserir('3')">
-                            <input type="button" class="button" class="btnOperador" name="nmBtSomar" id="idBtSomar" value="+" onclick="somarValores()">
+                            <input type="button" class="button" class="btnOperador" name="nmBtSomar" id="idBtSomar" value="+" onclick="inserir('+')">
                         </div>
 
                         <div id="idDivSetimaL">  <!-- Setima linha -->
                             <input type="button" class="button" class="btnNumber" name="nmBtZero" id="idBtZero" value="0" onclick="inserir('0')">
-                            <input type="button" class="button" name="nmBtVirgula" id="idBtVirgula" value=",">
+                            <input type="button" class="button" name="nmBtVirgula" id="idBtVirgula" value="," onclick="inserir(',')">
                             <input type="button" class="button" name="nmBtIgual" id="idBtIgual" value="=" onclick="resultado()">
                         </div>   
                 </fieldset>
@@ -138,38 +138,15 @@
                     document.getElementById("inpIdNumber").value = numero + num //na tela e adicionar um novo com o botão.
                 }
                 
-                function somarValores(){
+                function resultado(){
                     
-                    let soma = btn + btn
-                    input.value = soma
+                    let resultado = document.getElementById("inpIdNumber").value
+                        if (resultado) {
+                            document.getElementById("inpIdNumber").value = eval(resultado)
+                        }
+                    
                 }
-    
-                /*function subtrairValores(){
-    
-                    num1 = Number(document.getElementById("idNum1").value)
-                    num2 = Number(document.getElementById("idNum2").value)
-                    resultado = num1 - num2
-                    document.getElementById("idResultado").value = resultado
-    
-                }
-    
-                function multiplicarValores(){
-    
-                    num1 = Number(document.getElementById("idNum1").value)
-                    num2 = Number(document.getElementById("idNum2").value)
-                    resultado = num1 * num2
-                    document.getElementById("idResultado").value = resultado
-    
-                }
-    
-                function dividirValores(){
-    
-                    num1 = Number(document.getElementById("idNum1").value)
-                    num2 = Number(document.getElementById("idNum2").value)
-                    resultado = num1 / num2
-                    document.getElementById("idResultado").value = resultado
-    
-                }*/
+
             </script>
         </main>
     </body>
