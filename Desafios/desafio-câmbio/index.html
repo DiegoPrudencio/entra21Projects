@@ -6,29 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
         <title>Casa de Câmbio</title>
-        <style>
-            *{
-                background-color: antiquewhite;
-                font-family: 'Courier New', Courier, monospace;
-                margin-bottom: 10px;
-            }
-
-            .btn{
-                
-                margin: 10px;
-                font-size: 10px;
-            }
-        </style>
     </head>
     <body>
         <main>
             <form action="">
-                <fieldset>
+                <fieldset class="borda">
                     <legend>Conversão de Moeda</legend>
                     <div>
                         <label for="idValor">Qual moeda você quer saber a cotação:</label>
                     </div>
-                    <div>
+                    <div class="input">
                         <input type="text" name="nmData" id="idData" placeholder="MM-DD-AAAA" required>
                     </div>
                     <div>
@@ -44,18 +31,7 @@
                             <option value="JPY">Iene</option>
                             <option value="NOK">Coroa norueguesa</option>
                             <option value="SEK">Coroa sueca</option>
-
                     </div>
-                    <!-- <input type="number" name="nmValor" id="idValor" step="0.1" required> -->
-
-                    <!-- <div> 
-                        <select name="nmMoedasSaida" id="idMoedasSaida">
-                            <option value="real">Real</option>
-                            <option value="dolarAmericano">Dólar Americano</option>
-                            <option value="euro">Euro</option>
-                            <option value="libraEsterlina">Libra Esterlina</option>
-                            <option value="dolarCanadense">Dólar Canadense</option>
-                    </div> -->
                     <div>
                         <input type="button" class="btn" name="nmBtValor" id="idBtValor" value="Conferir">
                     </div>
@@ -89,40 +65,25 @@
                     })
                     
                     xhr.send()
-
-                    
-
                 }
 
                 function imprimirValor(valorJson) {
                     console.log(valorJson);
 
                     let valorObj = JSON.parse(valorJson);
-                    
+                    let cotacaoCompraText = ""
+
                     console.log(valorObj);
-                    console.log(valorObj.value[4].cotacaoCompra);
+                    //console.log(valorObj.value[4].cotacaoCompra);
 
+                    valorObj.value.forEach(function(boletim){
+                        cotacaoCompraText = cotacaoCompraText + boletim.cotacaoCompra + "; "
+                    })
 
-                    // console.log(valorObj[4].cotacaoCompra)
-                    
-                    for (let i = 0; i < valorObj.value.length; i++) {
-                        let string = element[i]
-                        console.log(string);
-                    }
-                    
-
-                // let valorCotacaoDeCompra = valorObj.value.forEach(cotacao);
-                // console.log(valorCotacaoDeCompra);
-                    
+                    console.log(cotacaoCompraText);
+                    document.getElementById("idOut").value = "Cotação de compra: " + cotacaoCompraText
                     
                 }
-
-                // function cotacao(value) {
-                //     let element = value
-                //     return element
-                // }
-
-
 
             </script>
         </main>
