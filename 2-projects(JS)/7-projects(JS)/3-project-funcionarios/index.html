@@ -49,7 +49,7 @@
                 var masc = document.getElementById("idMasc").checked
                 var fem = document.getElementById("idFem").checked
                 var mOuF
-                var sexo = []
+                var sexos = []
                 var salario = []
 
                 var out1 = document.getElementById("idOut1")
@@ -64,16 +64,17 @@
                 document.getElementById("idNome").value = ""
                 console.log(nomes)
 
-                if (masc == true) {
-                    let masc = "Masc"
-                    sexo.push(masc)
+                if (fem) {
+                    //fem = "Fem"
+                    sexos.push("Fem")
                 }
-                if (fem == true) {
-                    let fem = "Fem"
-                    sexo.push(fem)
+                if (masc) {
+                    //masc = "Masc"
+                    sexos.push("Masc")
+                }
 
-                console.log(sexo)
-                }
+                console.log(sexos)
+                
 
 
                 let valor = Number(document.getElementById("idSalario").value)

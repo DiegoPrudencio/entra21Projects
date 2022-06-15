@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Casa de Câmbio</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Conversão de Moeda</legend>
+                    <div>
+                        <label for="idValor">Qual moeda você quer saber a cotação:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="nmData" id="idData" placeholder="MM-DD-AAAA" required>
+                    </div>
+                    <div>
+                        <select name="nmMoeda" id="idMoeda">
+                            <!-- <option value="real">Real</option> -->
+                            <option value="USD">Dólar Americano</option>
+                            <option value="EUR">Euro</option>
+                            <option value="GBP">Libra Esterlina</option>
+                            <option value="CAD">Dólar Canadense</option>
+                            <option value="AUD">Dólar Australiano</option>
+                            <option value="CHF">Franco Suiço</option>
+                            <option value="DKK">Coroa dinamarquesa</option>
+                            <option value="JPY">Iene</option>
+                            <option value="NOK">Coroa norueguesa</option>
+                            <option value="SEK">Coroa sueca</option>
+
+                    </div>
+                    <!-- <input type="number" name="nmValor" id="idValor" step="0.1" required> -->
+
+                    <!-- <div> 
+                        <select name="nmMoedasSaida" id="idMoedasSaida">
+                            <option value="real">Real</option>
+                            <option value="dolarAmericano">Dólar Americano</option>
+                            <option value="euro">Euro</option>
+                            <option value="libraEsterlina">Libra Esterlina</option>
+                            <option value="dolarCanadense">Dólar Canadense</option>
+                    </div> -->
+                    <div>
+                        <input type="button" class="btn" name="nmBtValor" id="idBtValor" value="Conferir">
+                    </div>
+                    <div>
+                        <output id="idOut"></output>
+                    </div>
+                </fieldset>
+            </form>
+            <script>
+
+                var btValor = document.getElementById("idBtValor")
+
+                btValor.onclick = function(){
+                    let moeda = document.querySelector("#idMoeda").value
+                    let data = document.getElementById("idData").value
+                    buscarCotacao(moeda,data)
+
+                }
+
+                //API - Application Programing Interface
+                //Endpoint - Endereço dentro do servidor 
+                function buscarCotacao(moeda,data) {
+                    //AJAX
+                    var xhr = new XMLHttpRequest(); 
+
+                    xhr.open("GET", "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='" + moeda + "'&@dataCotacao='" + data + "'&$top=100&$format=json&$select=paridadeCompra,paridadeVenda,cotacaoCompra,cotacaoVenda,dataHoraCotacao,tipoBoletim")
+
+                    xhr.addEventListener("load", function(){
+                        var resposta = xhr.responseText;
+                        imprimirValor(resposta)
+                    })
+                    
+                    xhr.send()
+
+                    
+
+                }
+
+                function imprimirValor(valorJson) {
+                    console.log(valorJson);
+
+                    let valorObj = JSON.parse(valorJson);
+                    
+                    console.log(valorObj);
+                    console.log(valorObj.value[4].cotacaoCompra);
+
+
+                    // console.log(valorObj[4].cotacaoCompra)
+                    
+                    for (let i = 0; i < valorObj.value.length; i++) {
+                        let string = element[i]
+                        console.log(string);
+                    }
+                    
+
+                // let valorCotacaoDeCompra = valorObj.value.forEach(cotacao);
+                // console.log(valorCotacaoDeCompra);
+                    
+                    
+                }
+
+                // function cotacao(value) {
+                //     let element = value
+                //     return element
+                // }
+
+
+
+            </script>
+        </main>
+    </body>
+</html>
