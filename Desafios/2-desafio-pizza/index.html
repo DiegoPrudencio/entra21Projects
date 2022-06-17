@@ -7,25 +7,55 @@
         <title>Tabela de pizzas</title>
     </head>
     <body>
-        <div class="formulario">
-            <form action="">
-                <div class="nome">
-                    <label for="idNome" class="label">Nome comercial:</label>
-                    <input type="text" class="input" id="idTamanho">
-                </div>
-                <div class="tamanho">
-                    <label class="label" for="idTamanho">Tamanho (cm):</label>
-                    <input type="text" class="input" id="idTamanho">
-                </div>
-                <div class="preco">
-                    <label class="label" for="idPreco">Preço:</label>
-                    <input type="text" class="input" id="idTamanho">
-                </div>
-                <div class="output">
-                    <output id="idOut"></output>
-                </div>
-            </form>
-        </div>
+        <header>
+            <div class="cabecalho">
+                <p class="titulo">Cadastro de informações para tabela.</p>
+            </div>
+        </header>
+        <main>
+            <div class="formulario">
+                <form action="">
+                    <div class="nome">
+                        <label for="idNome" class="label">Nome comercial:</label>
+                        <input type="text" class="input" id="idNome" name="nmNome" required>
+                    </div>
+                    <div class="tamanho">
+                        <label class="label" for="idTamanho">Tamanho (cm):</label>
+                        <input type="text" class="input" id="idTamanho" name="nmTamanho" required>
+                    </div>
+                    <div class="preco">
+                        <label class="label" for="idPreco">Preço:</label>
+                        <input type="text" class="input" id="idPreco" name="nmPreco">
+                    </div>
+                    <div class="botao">
+                        <input type="button" id="idBtnEnviar" name="nmBtnEnviar" value="Enviar" required>
+                    </div>
+                    <div class="output">
+                        <output id="idOut"></output>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script>
 
+            var nomes = []
+            var tamanhos = []
+            var precos = []
+            var btnEnviar = document.getElementById("idBtnEnviar")
+            //.querySelector("#idBtnEnviar")
+
+            btnEnviar.onclick = function(){
+                    let nome = nomes.push(document.getElementById("idNome").value)
+                        document.getElementById("idNome").value = ""
+                    let tamanho = tamanhos.push(Number(document.getElementById("idTamanho").value))
+                        document.getElementById("idTamanho").value = ""
+                    let preco = precos.push(Number(document.getElementById("idPreco").value))
+                        document.getElementById("idPreco").value = ""
+
+                    console.log(nomes);
+                    console.log(tamanhos);
+                    console.log(precos);
+            }
+        </script>
     </body>
 </html>
