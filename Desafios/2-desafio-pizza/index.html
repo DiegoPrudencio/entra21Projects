@@ -44,6 +44,10 @@
             var nomes = []
             var tamanhos = []
             var precos = []
+            var areas = []
+            var custoBeneficio = []
+
+            //Variáveis botões
             var btnEnviar = document.getElementById("idBtnEnviar")
             var btnLimpar = document.getElementById("idBtnLimpar")
             var btnRelatorio = document.getElementById("idBtnRelatorio")
@@ -59,16 +63,17 @@
                 let tamanho = Number(document.getElementById("idTamanho").value) 
                 let preco = Number(document.getElementById("idPreco").value)
 
+                //Chama as funções de validação
                 let validarNome = nomeValido(nome)
                 let validarTamanho = tamanhoValido(tamanho)
-                let validarPreco = precoValido(preço)
+                let validarPreco = precoValido(preco)
 
                 if (validarNome && validarTamanho && validarPreco) {
 
                     nomes.push(nome)
                     tamanhos.push(tamanho)
-                    preços.push(preço)
-                    tamanhos2.push(tamanho2)
+                    precos.push(preco)
+
                 }
 
                 document.getElementById("idNome").value = ""
@@ -88,6 +93,10 @@
 
             btnRelatorio.onclick = function(){
 
+                areas = calculoArea(tamanhos)
+                custoBeneficio = calculoCustoBeneficio(precos,areas)
+                console.log(areas)
+                console.log(custoBeneficio)
             }
 
 
@@ -121,6 +130,24 @@
                     return false
                 }
                 return true
+            }
+            
+            //Função para cálculo de área
+            function calculoArea() {
+                for (let i = 0; i < tamanhos.length; i++) {
+                    let areaPizza = 3.14*(((tamanhos[i])/2)**2)
+                    areas.push(areaPizza.toFixed(2))     
+                }
+                return areas
+            }
+
+            //Função para cálculo de custo-benefício
+            function calculoCustoBeneficio(areas, precos) {
+                for (let i = 0; i < precos.length; i++) {
+                    let beneficio = precos[i]/areas[i]
+                    custoBeneficio.push(beneficio.toFixed(2))
+                }
+                return custoBeneficio
             }
         </script>
     </body>
