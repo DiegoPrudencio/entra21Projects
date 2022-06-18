@@ -46,20 +46,34 @@
             var precos = []
             var btnEnviar = document.getElementById("idBtnEnviar")
             var btnLimpar = document.getElementById("idBtnLimpar")
+            var btnRelatorio = document.getElementById("idBtnRelatorio")
 
             /*
-             * Rotina de Inicialização
+             * Rotina de Inicialização e verificação das informações
              * Descrição: Inicializa variáveis globais e tela 
              * Parâmetros: none
              * Retorno: none
              */            
             btnEnviar.onclick = function(){
-                    let nome = nomes.push(document.getElementById("idNome").value)
-                        document.getElementById("idNome").value = ""
-                    let tamanho = tamanhos.push(Number(document.getElementById("idTamanho").value))
-                        document.getElementById("idTamanho").value = ""
-                    let preco = precos.push(Number(document.getElementById("idPreco").value))
-                        document.getElementById("idPreco").value = ""
+                let nome = document.getElementById("idNome").value
+                let tamanho = Number(document.getElementById("idTamanho").value) 
+                let preco = Number(document.getElementById("idPreco").value)
+
+                let validarNome = nomeValido(nome)
+                let validarTamanho = tamanhoValido(tamanho)
+                let validarPreco = precoValido(preço)
+
+                if (validarNome && validarTamanho && validarPreco) {
+
+                    nomes.push(nome)
+                    tamanhos.push(tamanho)
+                    preços.push(preço)
+                    tamanhos2.push(tamanho2)
+                }
+
+                document.getElementById("idNome").value = ""
+                document.getElementById("idTamanho").value = ""
+                document.getElementById("idPreco").value = ""
 
                     console.log(nomes);
                     console.log(tamanhos);
@@ -70,6 +84,43 @@
                 document.getElementById("idNome").value = ""
                 document.getElementById("idTamanho").value = ""
                 document.getElementById("idPreco").value = ""
+            }
+
+            btnRelatorio.onclick = function(){
+
+            }
+
+
+            //Validação das informações adicionadas
+
+            function nomeValido(nome) {
+                if (nome == "" || nome == "") {
+                    alert("Nome Inválido")
+                    document.getElementById("#idNome").value = ""
+                    document.getElementById("#idNome").focus()
+                    return false
+                }
+                return true
+            }
+
+            function tamanhoValido(tamanho) {
+                if (tamanho <= 0) {
+                    alert("Tamanho Inválido")
+                    document.getElementById("#idTamanho").value = ""
+                    document.getElementById("#idTamanho").focus()
+                    return false
+                }
+                return true
+            }
+
+            function precoValido(preço) {
+                if (preço <= 0) {
+                    alert("Preço Inválido")
+                    document.getElementById("#idPreço").value = ""
+                    document.getElementById("#idPreço").focus()
+                    return false
+                }
+                return true
             }
         </script>
     </body>
