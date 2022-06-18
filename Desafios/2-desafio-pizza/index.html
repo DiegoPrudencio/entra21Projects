@@ -28,7 +28,9 @@
                         <input type="text" class="input" id="idPreco" name="nmPreco">
                     </div>
                     <div class="botao">
-                        <input type="button" id="idBtnEnviar" name="nmBtnEnviar" value="Enviar" required>
+                        <input type="button" id="idBtnEnviar" name="nmBtnEnviar" value="Enviar">
+                        <input type="button" id="idBtnLimpar" name="nmBtnLimpar" value="Limpar">
+                        <input type="button" id="idBtnRelatorio" name="nmBtnRelatorio" value="Gerar Relatório">
                     </div>
                     <div class="output">
                         <output id="idOut"></output>
@@ -38,12 +40,19 @@
         </main>
         <script>
 
+            //Declaração de variáveis globais 
             var nomes = []
             var tamanhos = []
             var precos = []
             var btnEnviar = document.getElementById("idBtnEnviar")
-            //.querySelector("#idBtnEnviar")
+            var btnLimpar = document.getElementById("idBtnLimpar")
 
+            /*
+             * Rotina de Inicialização
+             * Descrição: Inicializa variáveis globais e tela 
+             * Parâmetros: none
+             * Retorno: none
+             */            
             btnEnviar.onclick = function(){
                     let nome = nomes.push(document.getElementById("idNome").value)
                         document.getElementById("idNome").value = ""
@@ -55,6 +64,12 @@
                     console.log(nomes);
                     console.log(tamanhos);
                     console.log(precos);
+            }
+
+            btnLimpar.onclick = function(){
+                document.getElementById("idNome").value = ""
+                document.getElementById("idTamanho").value = ""
+                document.getElementById("idPreco").value = ""
             }
         </script>
     </body>
