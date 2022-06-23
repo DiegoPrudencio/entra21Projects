@@ -13,20 +13,35 @@
                     <div>
                         <legend>Temperatura</legend>
                     </div>
-                    <div>
+                    <div class="divLbTemperatura">
                         <label for="idLbTemperatura">Temperatura (C°):</label>
                         <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
                     </div>
+                    <div class="divLbDataIn">
+                        <label for="idLbDataIn">Data:</label>
+                        <input type="date" name="nmDataIn" id="idDataIn">
+                    </div>
+                    <div class="divBtn">
+                        <input type="button" class="btn" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
+                        <input type="button" class="btn" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
+                    </div>
+                </fieldset>
+            </form>
+            <form action="">
+                <fieldset>
                     <div>
-                        <label for="idLbTemp">Data:</label>
-                        <input type="date" name="nmData" id="idData">
+                        <legend>Verificar temperatura</legend>
+                    </div>
+                    <div class="divLbDataOut">
+                        <label for="idLbDataCheck">Data para verificação:</label>
+                        <input type="date" name="nmDataCheck" id="idDataCheck">
+                    </div>
+                    <div class="divBtn">
+                        <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
                     </div>
                     <div>
-                        <input type="button" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
-                        <input type="button" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
-                    </div>
-                    <div>
-                        <output id="idOut"></output>
+                        <output id="idOut1"></output>
+                        <output id="idOut2"></output>
                     </div>
                 </fieldset>
             </form>
@@ -36,11 +51,12 @@
             //Declaração de variáveis globais 
             var temperaturas = []
             var datas = []
+            //var out1 = document.getElementById("idOut").value
 
             //Variáveis botões
             var btnCadastrar = document.getElementById("idBtnCadastrar")
             var btnLimpar = document.getElementById("idBtnLimpar")
-            var btnRelatorio = document.getElementById("idBtnRelatorio")
+            var btnVerificarTemp = document.getElementById("idBtnVerificar")
 
             /*
              * Rotina de Inicialização e verificação das informações
@@ -50,7 +66,7 @@
              */            
             btnCadastrar.onclick = function(){
                 let temperatura = document.getElementById("idTemperatura").value
-                let data = document.getElementById("idData").value
+                let data = document.getElementById("idDataIn").value
                 
 
                 //Chama as funções de validação
@@ -71,7 +87,36 @@
 
             btnLimpar.onclick = function(){
                 document.getElementById("idTemperatura").value = ""
-                document.getElementById("idData").value = ""
+                document.getElementById("idDataIn").value = ""
+            }
+
+            //Função para verificar temperatura
+            btnVerificarTemp.onclick = function(){
+
+                let dataCheck = document.getElementById("idDataCheck").value
+                let validarDataCheck = dataValidaCheck(dataCheck)
+
+                datas.forEach(function(element, i){
+                    if (element[i] == dataCheck) {
+                        let indexAux = i
+                        document.getElementById("idOut1").value = "Data: " + dataCheck
+                        
+                        temperaturas.forEach(function(element, j){
+                            if (j == indexAux) {
+                                document.getElementById("idOut2").value = "Temperatura: " + element[j]
+                            }
+                    
+                        })
+                    }
+                })
+
+                // temperaturas.forEach(function(element, j){
+                //     if (j == indexAux) {
+                //         document.getElementById("idOut2").value = "Temperatura: " + element[j]
+                //     }
+                    
+                // })
+                
             }
 
             //Validação das informações adicionadas
@@ -89,8 +134,18 @@
             function dataValida(data) {
                 if (data == "" || data == " ") {
                     alert("Data Inválida")
-                    document.getElementById("idData").value = ""
-                    document.getElementById("idData").focus()
+                    document.getElementById("idDataIn").value = ""
+                    document.getElementById("idDataIn").focus()
+                    return false
+                }
+                return true
+            }
+
+            function dataValidaCheck(dataCheck) {
+                if (dataCheck == "" || dataCheck == " ") {
+                    alert("Data Inválida")
+                    document.getElementById("idDataCheck").value = ""
+                    document.getElementById("idDataCheck").focus()
                     return false
                 }
                 return true
