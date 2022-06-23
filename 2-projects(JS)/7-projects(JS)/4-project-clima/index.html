@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temperatura</title>
+    </head>
+    <body>
+        <main>
+            <form action="">
+                <fieldset>
+                    <div>
+                        <legend>Temperatura</legend>
+                    </div>
+                    <div>
+                        <label for="idLbTemperatura">Temperatura (C°):</label>
+                        <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
+                    </div>
+                    <div>
+                        <label for="idLbTemp">Data:</label>
+                        <input type="date" name="nmData" id="idData">
+                    </div>
+                    <div>
+                        <input type="button" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
+                        <input type="button" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
+                    </div>
+                    <div>
+                        <output id="idOut"></output>
+                    </div>
+                </fieldset>
+            </form>
+            <script>
+
+
+            //Declaração de variáveis globais 
+            var temperaturas = []
+            var datas = []
+
+            //Variáveis botões
+            var btnCadastrar = document.getElementById("idBtnCadastrar")
+            var btnLimpar = document.getElementById("idBtnLimpar")
+            var btnRelatorio = document.getElementById("idBtnRelatorio")
+
+            /*
+             * Rotina de Inicialização e verificação das informações
+             * Descrição: Inicializa variáveis globais e tela 
+             * Parâmetros: none
+             * Retorno: none
+             */            
+            btnCadastrar.onclick = function(){
+                let temperatura = document.getElementById("idTemperatura").value
+                let data = document.getElementById("idData").value
+                
+
+                //Chama as funções de validação
+                let validarTemperatura = temperaturaValida(temperatura)
+                let validarData = dataValida(data)
+
+                if (validarTemperatura && validarData) {
+
+                    temperaturas.push(temperatura)
+                    datas.push(data)
+                }
+
+                document.getElementById("idTemperatura").value = ""
+
+                    console.log(temperaturas);
+                    console.log(datas);
+            }
+
+            btnLimpar.onclick = function(){
+                document.getElementById("idTemperatura").value = ""
+                document.getElementById("idData").value = ""
+            }
+
+            //Validação das informações adicionadas
+
+            function temperaturaValida(temperatura) {
+                if (temperatura == "" || temperatura == " ") {
+                    alert("Temperatura Inválida")
+                    document.getElementById("idTemperatura").value = ""
+                    document.getElementById("idTemperatura").focus()
+                    return false
+                }
+                return true
+            }
+
+            function dataValida(data) {
+                if (data == "" || data == " ") {
+                    alert("Data Inválida")
+                    document.getElementById("idData").value = ""
+                    document.getElementById("idData").focus()
+                    return false
+                }
+                return true
+            }
+
+            </script>
+        </main>
+    </body>
+</html>
