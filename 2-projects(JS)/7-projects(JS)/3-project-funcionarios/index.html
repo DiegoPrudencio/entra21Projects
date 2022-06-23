@@ -20,9 +20,9 @@
                     <br><br>
                 <label for="idSexo">Qual seu sexo de nascimento?</label>
                     <br><br>
-                <input type="radio" name="nmSexo" id="idMasc">
+                <input type="radio" name="nmSexo" id="idMasc" value="Masc">
                 <label for="idSexo">Masculino</label>
-                <input type="radio" name="nmSexo" id="idFem"checked>
+                <input type="radio" name="nmSexo" id="idFem"checked value="Fem">
                 <label for="idSexo">Feminino</label>
                     <br><br>
                 <label for="idSalario">Inserir a salário</label>
@@ -31,6 +31,7 @@
                     <br><br>
                 <input type="button" name="nmBtEnviar" id="idBtEnviar" value="Enviar" onclick="enviar()">
                 <input type="button" name="nmBtRelatorio" id="idBtRelatorio" value="Relatório" onclick="relatorio()">
+                <input type="button" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar" onclick="limparTela()">
                     <br><br>
                 <output id="idOut1"></output>
                     <br><br>
@@ -46,11 +47,9 @@
         <script>
 
                 var nomes = []
-                var masc = document.getElementById("idMasc").checked
-                var fem = document.getElementById("idFem").checked
                 var mOuF
                 var sexos = []
-                var salario = []
+                var salarios = []
 
                 var out1 = document.getElementById("idOut1")
                 var out2 = document.querySelector("#idOut2")
@@ -64,25 +63,58 @@
                 document.getElementById("idNome").value = ""
                 console.log(nomes)
 
-                if (fem) {
-                    //fem = "Fem"
-                    sexos.push("Fem")
-                }
-                if (masc) {
-                    //masc = "Masc"
-                    sexos.push("Masc")
-                }
+                sexos.push(document.querySelector('input[name="nmSexo"]:checked').value)
+                // let masc = document.getElementById("idMasc").checked
+                // let fem = document.getElementById("idFem").checked
+
+                // if (fem) {
+                //     //fem = "Fem"
+                //     sexos.push("Fem")
+                // } else {
+                //     sexos.push("Masc")
+                // }
 
                 console.log(sexos)
-                
-
-
+ 
                 let valor = Number(document.getElementById("idSalario").value)
-                salario.push(valor)
+                salarios.push(valor)
                 document.getElementById("idSalario").value = ""
-                console.log(salario)
+                console.log(salarios)
                 
             }
+
+            function limparTela() {
+                document.getElementById("idNome").value = ""
+                document.getElementById("idSalario").value = ""
+                document.getElementById("idFem").checked = true
+            }
+
+            function relatorio() {
+
+                let indSalariosFiltrados = filtrarSalariosMaiorQue(5000)
+
+                out1.value = "Mulheres com salários acima de R$5K: "
+                indSalariosFiltrados.forEach(element => {
+                    if (sexos[element] == "Fem") {
+                        out1.value = out1.value + "("+ nomes[element] + "; "+ sexos[element] + "; "+ salarios[element] +")"
+                    }
+                });
+
+            }
+
+            function filtrarSalariosMaiorQue(salarioCorte) {
+                let indSalariosFiltrados = []
+                
+                salarios.forEach(function(element, index){
+                    if (element > salarioCorte) {
+                        indSalariosFiltrados.push(index)
+                    }
+            })
+
+            return indSalariosFiltrados
+             
+            }
+
         </script>
 
     </body>
