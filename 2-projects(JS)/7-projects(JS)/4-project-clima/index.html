@@ -39,10 +39,13 @@
                     <div class="divBtn">
                         <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
                     </div>
-                    <div>
+                    <div class="out">
                         <output id="idOut1"></output>
+                    </div>
+                    <div class="out">
                         <output id="idOut2"></output>
                     </div>
+                    
                 </fieldset>
             </form>
             <script>
@@ -96,26 +99,22 @@
                 let dataCheck = document.getElementById("idDataCheck").value
                 let validarDataCheck = dataValidaCheck(dataCheck)
 
-                datas.forEach(function(element, i){
-                    if (element[i] == dataCheck) {
-                        let indexAux = i
-                        document.getElementById("idOut1").value = "Data: " + dataCheck
-                        
-                        temperaturas.forEach(function(element, j){
-                            if (j == indexAux) {
-                                document.getElementById("idOut2").value = "Temperatura: " + element[j]
-                            }
-                    
-                        })
-                    }
-                })
+                console.log(dataCheck);
 
-                // temperaturas.forEach(function(element, j){
-                //     if (j == indexAux) {
-                //         document.getElementById("idOut2").value = "Temperatura: " + element[j]
-                //     }
-                    
-                // })
+                for (let i = 0; i < datas.length; i++) {
+                    let indexAux
+                    if (datas[i] == dataCheck) {
+                        indexAux = i
+                        document.getElementById("idOut1").value = "Data: " + dataCheck
+                    }
+                    for (let j = 0; j < temperaturas.length; j++) {
+                        if (indexAux == j) {
+                            document.getElementById("idOut1").value = "Data: " + dataCheck
+                            document.getElementById("idOut2").value = "Temperatura: " + temperaturas[j] + " C°."
+                        }
+                        
+                    }
+                }
                 
             }
 
