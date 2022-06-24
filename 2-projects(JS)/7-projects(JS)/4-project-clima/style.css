@@ -13,12 +13,33 @@ body {
     text-align: center;
 }
 
+.boxes {
+    display: inline-block ;
+}
+
+.image {
+    margin-top: 15px;
+    height:315px;
+}
 .box {
+    display: block;
     text-align: center;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 15px ;
-    /* width: 50%; */
+    justify-content: right;
+    width: 300px;
+}
+
+.out {
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 15px ;
+    margin-bottom: 15px;
+    justify-content: right;
+    border-style: 1px solid;
+
 }
 
 .titulo {
@@ -27,3 +48,29 @@ body {
     font-size: 18px;
     
 }
+
+.btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 7px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.button {
+    border: none;
+    color: black;
+    background-color: lightblue;
+    padding: 15px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

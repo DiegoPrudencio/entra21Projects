@@ -9,54 +9,60 @@
     </head>
     <body>
         <main>
-            <div class="box">
-                <form action="">
-                    <fieldset>
-                        <div>
-                            <h1 class="titulo">
-                                Temperatura
-                            </h1>
-                        </div>
-                        
-                        <div class="divLbTemperatura">
-                            <label for="idLbTemperatura">Temperatura (C°):</label>
-                            <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
-                        </div>
-                        <div class="divLbDataIn">
-                            <label for="idLbDataIn">Data:</label>
-                            <input type="date" name="nmDataIn" id="idDataIn">
-                        </div>
-                        <div class="divBtn">
-                            <input type="button" class="btn" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
-                            <input type="button" class="btn" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
-                        </div>
-                    </fieldset>
-                </form>
+            <div class="boxes">
+                <img class="image" src="./termometro.jpeg" alt="foto do termometro">
             </div>
-            <div class="box">
-                <form action="">
-                    <fieldset>
-                        <div>
-                            <h1 class="titulo">
-                                Verificar temperatura
-                            </h1>
-                        </div>
-                        <div class="divLbDataOut">
-                            <label for="idLbDataCheck">Data para verificação:</label>
-                            <input type="date" name="nmDataCheck" id="idDataCheck">
-                        </div>
-                        <div class="divBtn">
-                            <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
-                        </div>
-                        <div class="out">
-                            <output id="idOut1"></output>
-                        </div>
-                        <div class="out">
-                            <output id="idOut2"></output>
-                        </div>
-                        
-                    </fieldset>
-                </form>
+            <div class="boxes">
+                <div class="box">
+                    <form action="">
+                        <fieldset>
+                            <div>
+                                <h1 class="titulo">
+                                    Temperatura
+                                </h1>
+                            </div>
+                            
+                            <div class="divLbTemperatura">
+                                <label for="idLbTemperatura">Temperatura (C°):</label>
+                                <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
+                            </div>
+                            <div class="divLbDataIn">
+                                <label for="idLbDataIn">Data:</label>
+                                <input type="date" name="nmDataIn" id="idDataIn">
+                            </div>
+                            <div class="divBtn">
+                                <input type="button" class="btn" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
+                                <input type="button" class="btn" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="box">
+                    <form action="">
+                        <fieldset>
+                            <div>
+                                <h1 class="titulo">
+                                    Verificar temperatura
+                                </h1>
+                            </div>
+                            <div class="divLbDataOut">
+                                <label for="idLbDataCheck">Data para verificação:</label>
+                                <input type="date" name="nmDataCheck" id="idDataCheck">
+                            </div>
+                            <div class="divBtn">
+                                <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="out" hidden>
+                <div>
+                    <output id="idOut1"></output>
+                </div>
+                <div>
+                    <output id="idOut2"></output>
+                </div>
             </div>
             <script>
 
@@ -93,6 +99,7 @@
                 }
 
                 document.getElementById("idTemperatura").value = ""
+                document.getElementById("idDataIn").value = ""
 
                     console.log(temperaturas);
                     console.log(datas);
@@ -104,23 +111,22 @@
             }
 
             //Função para verificar temperatura
+            
             btnVerificarTemp.onclick = function(){
-
+                document.querySelector(".out").hidden = false
                 let dataCheck = document.getElementById("idDataCheck").value
                 let validarDataCheck = dataValidaCheck(dataCheck)
-
-                console.log(dataCheck);
 
                 for (let i = 0; i < datas.length; i++) {
                     let indexAux
                     if (datas[i] == dataCheck) {
                         indexAux = i
-                        document.getElementById("idOut1").value = "Data: " + dataCheck
                     }
                     for (let j = 0; j < temperaturas.length; j++) {
                         if (indexAux == j) {
                             document.getElementById("idOut1").value = "Data: " + dataCheck
                             document.getElementById("idOut2").value = "Temperatura: " + temperaturas[j] + " C°."
+                            document.getElementById("idDataCheck").value = ""
                         }
                         
                     }
