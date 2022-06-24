@@ -42,12 +42,10 @@
         <script>
 
             var numeros = []
-            var ordem = document.querySelector("#idOrdenar").value
-                //var decrescente = document.querySelector("#idDecrescente").checked
             var numero
             var out1 = document.getElementById("idOut1")
 
-
+            //Função para envio de número
             function enviar() {
 
                 numeros.push(Number(document.getElementById("idNumeros").value))
@@ -55,14 +53,41 @@
                 console.log(numeros)
             }
 
+            //Função para ordenação
             function ordenar() {
-                
+                let ordem = document.getElementById("idOrdenar").value
+
                 if (ordem == "crescente") {
                     numeros.sort((a,b) => a - b)
                 }
                 if (ordem == "decrescente") {
                     numeros.reverse(numeros.sort((a,b) => a - b)) //sort((a,b) => b - a)
                 }
+
+
+                //Função realizada de forma completa.
+                /*if (ordem == "crescente") {
+                    numeros.sort(function (a, b) {
+                        if (a > b) {
+                            return 1
+                        }
+                        if (a < b) {
+                            return -1
+                        }
+                        return 0
+                    })
+                }
+                if (ordem == "decrescente") {
+                    numeros.sort(function (a, b) {
+                        if (a < b) {
+                                return 1
+                            }
+                        if (a > b) {
+                            return -1
+                        }
+                        return 0
+                    })
+                }*/
                 console.log(numeros)
             }
             
