@@ -4,50 +4,60 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Temperatura</title>
     </head>
     <body>
         <main>
-            <form action="">
-                <fieldset>
-                    <div>
-                        <legend>Temperatura</legend>
-                    </div>
-                    <div class="divLbTemperatura">
-                        <label for="idLbTemperatura">Temperatura (C°):</label>
-                        <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
-                    </div>
-                    <div class="divLbDataIn">
-                        <label for="idLbDataIn">Data:</label>
-                        <input type="date" name="nmDataIn" id="idDataIn">
-                    </div>
-                    <div class="divBtn">
-                        <input type="button" class="btn" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
-                        <input type="button" class="btn" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
-                    </div>
-                </fieldset>
-            </form>
-            <form action="">
-                <fieldset>
-                    <div>
-                        <legend>Verificar temperatura</legend>
-                    </div>
-                    <div class="divLbDataOut">
-                        <label for="idLbDataCheck">Data para verificação:</label>
-                        <input type="date" name="nmDataCheck" id="idDataCheck">
-                    </div>
-                    <div class="divBtn">
-                        <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
-                    </div>
-                    <div class="out">
-                        <output id="idOut1"></output>
-                    </div>
-                    <div class="out">
-                        <output id="idOut2"></output>
-                    </div>
-                    
-                </fieldset>
-            </form>
+            <div class="box">
+                <form action="">
+                    <fieldset>
+                        <div>
+                            <h1 class="titulo">
+                                Temperatura
+                            </h1>
+                        </div>
+                        
+                        <div class="divLbTemperatura">
+                            <label for="idLbTemperatura">Temperatura (C°):</label>
+                            <input type="number" name="nmTemperatura" id="idTemperatura" step="0.1">
+                        </div>
+                        <div class="divLbDataIn">
+                            <label for="idLbDataIn">Data:</label>
+                            <input type="date" name="nmDataIn" id="idDataIn">
+                        </div>
+                        <div class="divBtn">
+                            <input type="button" class="btn" name="nmBtnCadastrar" id="idBtnCadastrar" value="Cadastrar">
+                            <input type="button" class="btn" name="nmBtnLimpar" id="idBtnLimpar" value="Limpar">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="box">
+                <form action="">
+                    <fieldset>
+                        <div>
+                            <h1 class="titulo">
+                                Verificar temperatura
+                            </h1>
+                        </div>
+                        <div class="divLbDataOut">
+                            <label for="idLbDataCheck">Data para verificação:</label>
+                            <input type="date" name="nmDataCheck" id="idDataCheck">
+                        </div>
+                        <div class="divBtn">
+                            <input type="button" class="btn" name="nmBtnVerificar" id="idBtnVerificar" value="Verificar Temperatura">
+                        </div>
+                        <div class="out">
+                            <output id="idOut1"></output>
+                        </div>
+                        <div class="out">
+                            <output id="idOut2"></output>
+                        </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
             <script>
 
 
