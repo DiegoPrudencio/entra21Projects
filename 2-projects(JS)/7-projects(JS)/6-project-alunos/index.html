@@ -30,6 +30,13 @@
                     <label for="idNumTel">Telefone do responsável:</label>
                     <input type="text" name="nmNumTel" id="idNumTel">
                         <br><br>
+                    <label for="idSituacao">Situação do Aluno:</label>
+                        <br>
+                    <input type="radio" name="nmSituacao" id="idRegular" value="Regular" checked>
+                        <label for="idRegular">Regular</label>
+                    <input type="radio" name="nmSituacao" id="idIrregular" value="Irregular">
+                        <label for="idIrregular">Irregular</label>
+                        <br><br>
                 </div>
                 <div>
                     <input type="button" name="nmBtCadastrarAluno" id="idBtCadastrarAluno" value="Cadastrar Aluno" onclick="cadastrarAluno()">
@@ -80,15 +87,12 @@
             var nomeMaes = []
             var nomePais = []
             var numTels = []
-
-            var nome = document.getElementById("idBuscarAluno").value
+            var situacoes = []
 
             var notasP1 = []
             var notasP2 = []
             var notasP3 = []
             var notasP4 = []
-
-            var out1 = document.getElementById("idOut1")
 
             function cadastrarAluno() {
 
@@ -116,6 +120,16 @@
                 numTels.push(numTel)
                 document.getElementById("idNumTel").value = ""
                 console.log(numTels)
+
+                if (document.getElementById("idRegular").checked) {
+                    let situacao = document.getElementById("idRegular").value
+                    situacoes.push(situacao)
+                }
+                if (document.getElementById("idIrregular").checked) {
+                    let situacao = document.getElementById("idIrregular").value
+                    situacoes.push(situacao)
+                }
+                console.log(situacoes)
             }
 
             function cadastrarNota() {
@@ -142,18 +156,33 @@
             }
 
             function buscarAluno() {
-                
-                let buscarNome = nomeAlunos.filter(buscarNomeA)
-                console.log(buscarNome);
+                let nome = document.getElementById("idBuscarAluno").value
+                let out1 = document.getElementById("idOut1")
 
-            }
-
-            function buscarNomeA(value, index, array) {
-                if (value = nome) {
-                    return index
+                for (let i = 0; i < nomeAlunos.length; i++) {
+                    let index
+                    if (nomeAlunos[i] == nome) {
+                        index = i
+                        out1.value =    "Nome do Aluno: " + nomeAlunos[i] + "; " +
+                                        "Situação do Aluno: " + situacoes[i] + "; " +
+                                        "Nota P1: " + notasP1[i] + "; " +
+                                        "Nota P2: " + notasP2[i] + "; " +
+                                        "Nota P3: " + notasP3[i] + "; " +
+                                        "Nota P4: " + notasP4[i] + "; "
+                    }
                 }
-                //console.log(buscarNomeA());
+                
+                // let buscarNome = nomeAlunos.filter(buscarNomeA)
+                // console.log(buscarNome);
+
             }
+
+            // function buscarNomeA(value, index, array) {
+            //     if (value = nome) {
+            //         return index
+            //     }
+                //console.log(buscarNomeA());
+            //  }
 
         </script>
 
