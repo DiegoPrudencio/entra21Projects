@@ -1,27 +1,97 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <header class="inicio">
-            <form action="" class="pergunta">
-                <div>
-                    <p class="paragrafo">Vamos jogar. Vocês devem responder qual é a capital certa de cada Estado Brasileiro.</p>
-                </div>
-                <div class="pergunta">
-                    <h3 class="perguntaEstado">
-                        Qual a capital desse Estado Brasileiro?
-                    </h3>
-                    
-                </div>
-            </form>
-        </header>
-        <main class="jogo">
+<html lang="en">
 
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Jogo das Capitais</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <p class="paragraph">Vamos jogar. O jogo consistem responder qual é a capital certa de cada Estado
+                Brasileiro.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="nPlayers">
+                <p class="paragraph">Me diz uma coisa...</p>
+                <p class="paragraph">Quantos jogadores irão jogar?</p>
+            </div>
+            <div class="select">
+                <select name="nmSelect" id="idSelect">
+                    <option value="one">Um jogador</option>
+                    <option value="two">Dois jogadores</option>
+                    <option value="three">Três jogadores</option>
+                    <option value="four">Quatro jogadores</option>
+                </select>
+                <input type="button" class="inputBtn" id="idBtnPlayers" value="Escolher">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="question">
+            <p class="paragraph">Qual a capital desse Estado Brasileiro?</p>
+        </div>
+        <output class="answerQuestion">Resposta</output>
+    </div>
+    <div class="container">
+        <div>
+            <div class="answerPlayerDiv">
+                <label class="labelAnswerPlayer" name="nmAnswerPlayerOne" for="idAnswerPlayerOne">Qual a resposta
+                    correta?</label>
+                <input type="text" class="inputAnswerPlayer" name="nmAnswerPlayerOne" id="idAnswerPlayerOne">
+                <input type="button" class="inputBtn" id="idBtnPlayerOne" value="Responder">
+            </div>
+            <div class="answerPlayerDiv">
+                <label class="labelAnswerPlayer" name="nmAnswerPlayerTwo" for="idAnswerPlayerTwo">Qual a resposta
+                    correta?</label>
+                <input type="text" class="inputAnswerPlayer" name="nmAnswerPlayerTwo" id="idAnswerPlayerTwo">
+                <input type="button" class="inputBtn" id="idBtnPlayerTwo" value="Responder">
+            </div>
+            <div class="answerPlayerDiv">
+                <label class="labelAnswerPlayer" name="nmAnswerPlayerThree" for="idAnswerPlayerThree">Qual a resposta
+                    correta?</label>
+                <input type="text" class="inputAnswerPlayer" name="nmAnswerPlayerThree" id="idAnswerPlayerThree">
+                <input type="button" class="inputBtn" id="idBtnPlayerThree" value="Responder">
+            </div>
+            <div class="answerPlayerDiv">
+                <label class="labelAnswerPlayer" name="nmAnswerPlayerFour" for="idAnswerPlayerFour">Qual a resposta
+                    correta?</label>
+                <input type="text" class="inputAnswerPlayer" name="nmAnswerPlayerFour" id="idAnswerPlayerFour">
+                <input type="button" class="inputBtn" id="idBtnPlayerFour" value="Responder">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="scorePlayerDiv">
+                <label class="labelAnswerPlayer" name="nmScorePlayerOne" for="idScorePlayerOne">Pontuação Jogador
+                    1</label>
+                <output class="scorePlayer">0</output>
+            </div>
+            <div class="scorePlayerDiv">
+                <label class="labelAnswerPlayer" name="nmScorePlayerTwo" for="idScorePlayerTwo">Pontuação Jogador
+                    2</label>
+                <output class="scorePlayer">0</output>
+            </div>
+            <div class="scorePlayerDiv">
+                <label class="labelAnswerPlayer" name="nmScorePlayerThree" for="idScorePlayerThree">Pontuação Jogador
+                    3</label>
+                <output class="scorePlayer">0</output>
+            </div>
+            <div class="scorePlayerDiv">
+                <label class="labelAnswerPlayer" name="nmScorePlayerFour" for="idScorePlayerFour">Pontuação Jogador
+                    4</label>
+                <output class="scorePlayer">0</output>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

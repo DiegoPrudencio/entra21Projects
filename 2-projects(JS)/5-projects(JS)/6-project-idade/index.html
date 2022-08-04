@@ -13,19 +13,32 @@
             <br><br>
             <input type="number" name="nmIdade" id="idIdade" step="1">
             <br><br>
-            <input type="button" name="nmBtIdade" id="idBtIdade" value="Envair" onclick="enviar()">
-            <input type="button" name="nmBtRelatorio" id="idRelatorio" value="Relatório" onclick="relatorio()">
+            <input type="button" name="nmBtnEnviar" id="idBtnEnviar" value="Envair" onclick="enviar()">
+            <input type="button" name="nmBtnRelatorio" id="idBtnRelatorio" value="Relatório" onclick="relatorio()">
             <br><br>
-            <output id="idOut1">A maior idade é:</output><br>
-            <output id="idOut2">Idade maiores que 18 anos:</output><br>
-            <output id="idOut3">Idade menores que 5 anos:</output>
+            <output id="idOut1"></output><br>
+            <output id="idOut2"></output><br>
+            <output id="idOut3"></output><br>
+            <output id="idOut4"></output>
         </form>
 
         <script>
 
+
+            var idades = []
+
             function enviar() {
 
                 var idade = Number(document.getElementById("idIdade").value)
+
+                idades.push(idade)
+                document.getElementById("idIdade").value = ""
+                console.log(idades)
+
+            }
+
+            function relatorio() {
+                
                 var mediaIdade
                 var somarIdade = 0
                 var contadorIdade = 0
@@ -33,31 +46,46 @@
                 var menores5 = 0
                 var maiorIdade = 0
 
-                somarIdade = somarIdade + idade
-                contadorIdade++
+                for (let i = 0; i < idades.length; i++) {
 
-                mediaIdade = (somarIdade/contadorIdade).toFixed(2)
+                    if (idades[i] > maiorIdade) {
+                        maiorIdade = idades[i]
 
-                if (idade > maiorIdade) {
-                    maiorIdade = idade
-                    //console.log(maiorIdade)
+                        }
+                    if (idades[i] > 18) {
+                        maiores18++
+
+                    }
+                    if (idades[i] < 5) {
+                        menores5++
+
+                    }   
+
+                    somarIdade = somarIdade + idades[i]
+                    contadorIdade++
+
+                    console.log(maiorIdade)
+                    console.log(maiores18)
+                    console.log(menores5)
+                    console.log(somarIdade);
+
                 }
-                if (idade > 18) {
-                    maiores18++
-                    //console.log(maiores18);
-                }
-                if (idade < 5) {
-                    menores5++
-                    //console.log(menores5)
-                }
+
+
+
+                mediaIdade = (somarIdade/contadorIdade).toFixed(0)
+
+
                 
-                let out1 = document.getElementById("idOut1").value
-                let out2 = document.getElementById("idOut2").value
-                let out3 = document.getElementById("idOut3").value
+                let out1 = document.getElementById("idOut1")
+                let out2 = document.getElementById("idOut2")
+                let out3 = document.getElementById("idOut3")
+                let out4 = document.getElementById("idOut4")
 
-                out1.value = maiorIdade
-                out2.value = maiores18
-                out3.value = menores5
+                out1.value = "A maior idade é: " + maiorIdade
+                out2.value = "Idade maiores que 18 anos: " + maiores18
+                out3.value = "Idade menores que 5 anos: " +  menores5
+                out4.value = "A media de idade é: " +  mediaIdade
             }
 
 

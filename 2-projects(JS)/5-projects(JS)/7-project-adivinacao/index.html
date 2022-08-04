@@ -36,7 +36,8 @@
 
             if (tentativa < 3) {
                 if (numUser == numRandomico) {
-                    mensagem.value = "O número foi descoberto"                
+                    mensagem.value = "O número foi descoberto"
+                    document.getElementById("idNum").disabled = true
                 } else if (numRandomico < numUser) {
                     mensagem.value = "O número é maior que sorteado"
                 } else if (numRandomico > numUser) {
@@ -45,7 +46,8 @@
                 document.getElementById("idNum").value = ""
             } else if (tentativa = 3) {
                 if (numUser == numRandomico) {
-                    mensagem.value = "O número foi descoberto"                
+                    mensagem.value = "O número foi descoberto"  
+                    document.getElementById("idNum").disabled = true          
                 } else {
                     mensagem.value = "Você perdeu o jogo, o número sorteado era " + numRandomico
 
