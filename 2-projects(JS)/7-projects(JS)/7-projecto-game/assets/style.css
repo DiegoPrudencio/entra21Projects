@@ -3,7 +3,9 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-
+    background-image: url(./images/cityOpacity.jpg);
+    background-position: center bottom;
+    background-size: cover;
 }
 
 .container {
@@ -13,7 +15,74 @@ html, body {
     text-align: center;
 }
 
+.paragraphTittle {
+    font-size: xx-large;
+    color: rgb(0, 0, 0); text-shadow: #8C7354 0.1em 0.1em 0.2em
+}
 
-.answerPlayerDiv {
+.paragraph {
+    font-size: 20px;
+    text-align: end;
+    margin-right: 20px;
+}
+
+.select, .outputAnswer {
+    text-align: start;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.container .question, .container .outputAnswer {
+    margin-top: 25px;
+}
+
+.container .outputAnswer {
+    margin-top: 35px;
+}
+
+.answerQuestion {
+    margin-left: 50px;
+}
+
+.inputBtn {
+    border: 1px solid #593B20;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #593B20, #D9CAB0);
+    padding: 7px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.btnChoice {
+    margin-left: 15px;
+}
+
+.answerPlayerDiv, .scorePlayerDiv {
     display: block;
+    border: 2px solid #593B20;
+    border-radius: 8px;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.playerOne {
+    margin-left: 30px;
+}
+
+.playerFour {
+    margin-right: 30px;
+}
+
+.answerPlayerDiv .divLine, .scorePlayerDiv .divLine {
+    margin: 10px;
+}
+
+.inputAnswerPlayer {
+    border: 1px solid #593B20;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.labelAnswerPlayer, .outputPlayer {
+    font-size: 20px;
 }
